@@ -1,0 +1,11 @@
+@media only screen and (max-width:767px){.navbar-default{background-color:transparent!important;border-color:transparent;}
+.navbar-default .navbar-nav > li > a{background-color:darkgrey;color:white;}
+.about-iphone img{width:100%;}
+.purchase-now .col-md-3{text-align:center;padding-top:50px;}
+}
+@media only screen and (max-width:768px){.header-iphone{display:none;}
+.header-text .header-btns.main{text-align:center;}
+.saelogo{margin-top: -20px;display:inline-block;}
+}
+@media only screen and (min-width:992px){}
+@media only screen and (min-width:1200px){}

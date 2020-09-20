@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>EDC-JGEC</title>
+  <meta charset="utf-8">
+
+  <meta name="description" content="EDC" />
+  <meta name="keywords" content="jgecEDC" />
+  <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:500italic,600italic,600,700,700italic,300italic,300,400,400italic,800,900' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600italic,700,900' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atomic+Age&family=Electrolize&family=Kavivanar&family=Kufam:wght@500&family=Risque&family=Sofadi+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="../static/images/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+
+    <!-- Fontawesome  -->
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/css/animate.css">
+
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/slide.css">
+
+    <!-- BX slider CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/css/jquery.bxslider.css">
+
+    <!-- responsive css -->
+    <link rel="stylesheet" type="text/css" href="../static/css/responsive.css">
+
+    <script src="https://kit.fontawesome.com/ca1cdc2614.js" crossorigin="anonymous"></script>
+    <style>
+     
+        a:link {
+            text-decoration: none;
+        }
+        
+        a:visited {
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        a:active {
+            text-decoration: underline;
+        }
+        
+        .social:link,
+        .social:visited {
+            color: white;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        
+        #saelogo {
+            height: 70px;
+            margin-top: -10%;
+            width: auto;
+            margin-left: -10%;
+        }
+        
+        .social:hover,
+        .social:active {
+            color: #129CF3;
+            background-color: transparent;
+        }
+        
+        .shead {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+      
+        .footer {
+            padding: 20px;
+        }
+        .navbar-default{
+          background-color: transparent;
+        }
+    </style>
+</head>
+
+
+<body>
+   
+        <!-- Header -->
+        <header id="HOME">
+          <!-- Navigation -->
+          <nav class="navbar navbar-default navbar-fixed-top">
+              <div class="container">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#loso-navbar-collapse-1" aria-expanded="false">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+                      <a class="navbar-brand" href="../index.html">
+                          <!-- small size logo -->
+
+                          <img id="saelogo" src="../static/images/favicon.ico">
+                      </a>
+                  </div>
+
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="loso-navbar-collapse-1">
+
+
+                      <ul class="nav navbar-nav navbar-right">
+                          <li><a href="../index.html" class="nav-item" style="font-weight: bold;">HOME</a></li>
+                          <li><a href="../about/about.html" class="nav-item" style="font-weight: bold;">ABOUT US</a></li>
+                          <li><a href="../members/members.html" class="nav-item" style="font-weight: bold;">MEMBERS</a></li>
+                          <li><a href="events.html" class="nav-item" style="font-weight: bold;">EVENTS</a></li>
+                          <li><a href="../gallery/gallery.html" class="nav-item" style="font-weight: bold;">GALLERY</a></li>
+                          <li><a href="../contactus/contactus.html" class="nav-item" style="font-weight: bold;">CONTACT US</a></li>
+                          <!-- <li><a href="blog/blog.html" class="nav-item">BLOG</a></li> -->
+
+                      </ul>
+                  </div>
+                  <!-- /.navbar-collapse -->
+              </div>
+              <!-- /.container-fluid -->
+          </nav>
+
+      </header>
+
+<style>
+  #member{
+    padding-top:100px;
+    overflow: hidden;
+  }
+  #ma,#tech,#webd,#gra,#ndors{
+    display: none;
+  }
+  #of{
+    background-color: white;
+  }
+  .show,.show1,.show2,.show3,.show4,.show5{
+    margin: 4vw;
+  }
+
+  .fab:hover,.fas:hover{
+    color: #129CF3;;
+  }
+ 
+
+/**** Social Icons *****/
+
+.social-icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+    display: flex;}
+  
+  li {
+    list-style: none;
+    }
+    .links {
+      position: relative;
+      display: block;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      background: transparent;
+      font-size: 23px;
+      color: rgba(224, 217, 217, 0.979);
+      font-weight: bold;
+      margin: 0 6px;
+      transition: .4s;
+      transform: translateY(200px);
+      opacity: 0;
+    } 
+  
+
+
+
+
+/**** Personal Details ****/
+
+.details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  height: 120px;
+  z-index: 1;
+  padding: 10px;
+           }
+  h2 {
+    margin: 0px 0;
+    padding: 0;
+    text-align: center;
+    font-size:2em;
+    }
+    .job-title {
+        font-size: 2rem;
+        line-height: 0.5rem;
+        color: #333;
+        font-weight: 300;
+    }
+  #wrapper-content{
+      background-color: rgb(227, 255, 238);
+  }
+
+</style>
+
+<header>
+    <section id="member">
+        <h1 class="shead wow bounceInRight" style="font-family: 'Aldrich', sans-serif;text-shadow: 2px 3px #2c778f;"><b><span style="color:red;font-size:7rem;">E</span><span style="color:white;font-size:4rem;">VENTS</span></b></h1>
+        
+    <div class="container">
+      <div class="row">
+        <div class="row" style="padding:1vw;"></div>
+    
+      </div>
+        
+      </div>
+    
+</header>
+
+<section id="events">
+  <div class="container">
+    <header class="section-header">
+    </header>
+
+    <div class="row events-extra wow fadeInUp">
+      <div class="col-lg-6 content order-lg-1 order-2">
+        <h4 class="text-left" style="color:darkblue;padding-left:20px;font-family: 'Abril Fatface', cursive;font-size:3rem;">TEDxJGEC</h4>
+        <br>
+        <p style="color:rgb(37, 37, 37);font-size: 1.6rem;padding-left: 10px;">
+          TEDx is an international community that celebrates locally driven ideas and elevates them to a global stage. The 'x' in TEDx stands for independently organized TED events, 
+          which is a nonprofit organization devoted to spreading ideas usually in the form of short, powerful talks.
+        </p>
+        <p style="color:rgb(37, 37, 37);font-size: 1.6rem;padding-left: 10px;">
+          On 11th February 2019, Entrepreneurship Development Cell, JGEC organized the first ever TEDx event, in any state run engineering college in West Bengal. We ignited a spark in our community by organizing a day filled with brilliant speakers, thought-provoking ideas and mind blowing conversations. Not only did our audience seek new ideas, but our organizing team also benefitted greatly, as the planning and execution of such an event requires leadership, teamwork and coordination skills, that parallel those required in the business world.
+        </p>
+      </div>
+
+      <div class="col-lg-6 background order-lg-2 order-1" style="padding-right: 30px;">
+        <div data-wow-delay="0.3s" class="about-us-image1 wow zoomIn"><img src="../static/images/T2.jpg" alt="" class="img-responsive"></div>
+        
+
+      </div>
+    </div>
+    <br />
+    <br>
+    <br>
+    <div class="row events-extra wow fadeInUp">
+      <div class="col-lg-6" style="padding-left: 30px;">
+        <div data-wow-delay="0.3s" class="about-us-image1 wow zoomIn"><img src="../static/images/5.jpg" alt="" class="img-responsive"></div>
+       
+      </div>
+      <div class="col-lg-6 pt-5 pt-lg-0">
+        <h4 class="text-left" style="color:darkblue;padding-left:5px;font-family: 'Abril Fatface', cursive;font-size:3rem;">B-PLAN||JGEC</h4>
+        <br>
+
+        <p style="padding-left: 10px;color:rgb(37, 37, 37);font-size: 1.6rem;">
+          Young Indians (Yi) is a movement for Indian Youth to converge, lead, co-create and influence India’s future. It is an integral part of the Confederation of Indian Industry (CII) playing a proactive role in India's development process.
+          Yi conducts learning sessions with industry experts to impart experiential learning through interactions and discussions.
+        </p>
+        <p style="padding-left: 10px;color:rgb(37, 37, 37);font-size: 1.6rem;">
+          EDC was fortunate enough to collaborate with young indians in our technical fest <b>'Sristi'</b> giving the students an oppurtunity of presenting their B-plans and getting valuable inputs from the investors.
+        </p>
+      </div>
+    </div>
+    <br />
+    
+    </div>
+  </div>
+</section>
+<!-- #events -->
+
+
+
+
+
+
+<footer class="footer abc">
+  <div class="container" style="padding-top:30px;">
+      <div class="row">
+          <!-- <h1 class="shead wow bounceInUp"><b><span style="color:red;font-size:6rem;">C</span><span style="color:black;">ONTACT US</span></b></h1> -->
+          <div class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+
+              <div class="col-md-3 mb-2 text-center">
+                  <i class="fa fa-map-marker fa-3x mb-5 sr-contact-1" style="color:rgb(16, 190, 16)"></i>
+                  <b><p style="color:black">
+                      Jalpaiguri Govt. Engineering College
+                      <br> Jalpaiguri
+                      <br>West Bengal
+                  </p></b>
+              </div>
+              <div class="col-md-3 mb-2 text-center ab">
+                  <i class="fa fa-facebook fa-3x mb-5 sr-contact-2" style="color:blue"></i>
+                  <p><a class="social" style="color:black" target="_blank" href="https://www.facebook.com/jgecEDC">jgecEDC</a></p>
+
+              </div>
+          </div>
+
+          <div class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+              <div class="col-md-3 mb-2 text-center ab">
+                  <i class="fa fa-instagram fa-3x"></i>
+                  <p><a class="social" style="color:black" target="_blank" href="https://www.instagram.com/edc_jgec/?hl=en">edc_jgec</a></p>
+              </div>
+              <div class="col-md-3 mb-2 text-center ab">
+                  <i class="fa fa-envelope fa-3x mb-5 sr-contact-3" style="color:orangered"></i>
+                  <p><a class="social" style="color:black" href = "mailto: edc@jgec.ac.in">edc@jgec.ac.in</a> </p>
+              </div>
+          </div>
+          <div class="wow bounceInDown">
+              <div class="col-md-12 mb-2 text-right">
+                  <div id="back-top"><a class="link" style="background-color:rgb(33, 156, 228);"><i class="fa fa-angle-double-up"></i></a></div>
+          <h1 class="shead wow bounceInUp" style="color:black;font-family: 'Sofadi One', cursive;"><b>Entrepreneurship Development Cell</b></h1>
+          <b><p class="copyright normal" style="text-align: center;color:black">© EDC||JGEC</a></p></b>
+          <!-- <h3 class="text-center" style="color:blue;font-family: 'Parisienne', cursive;">Made by Sharmistha</h3> -->
+          <div class="wow fadeInLeft text-center" data-wow-duration="1s" data-wow-delay=".5s">
+      </div>
+  </div>
+</footer>
+
+       
+        <!-- Bootstrap JavaScript -->
+        <script src="../static/js/jquery.js"></script>
+        <script src="../static/js/bootstrap.min.js"></script>
+
+        <!-- Bx Slider JS -->
+        <script src="../static/js/jquery.bxslider.min.js"></script>
+
+        <!-- Add JS counter lib -->
+        <script src="../static/js/jquery.waypoints.min.js"></script>
+        <script src="../static/js/jquery.counterup.min.js"></script>
+
+        <!-- Add wow js lib -->
+        <script src="../static/js/wow.min.js"></script>
+
+        <!-- Custom Js -->
+        <script src="../static/js/custom.js"></script>
+    </body>
+
+</html>
