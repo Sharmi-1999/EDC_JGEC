@@ -1,5 +1,5 @@
-import { Swiper, SwiperSlide, Pagination, Autoplay } from "swiper/react";
-import Image from "next/image";
+import { Swiper, SwiperSlide} from "swiper/react";
+import { Pagination,Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
@@ -20,7 +20,7 @@ export default function NewsSlider({data, error}) {
             <SwiperSlide key={index}>
               {item.type === "image" ? (
                 <>
-                  <Image src={item.url} alt={item.title} />
+                  <img src={item.url} alt={item.title} />
                   <h5>{item.title}</h5>
                 </>
               ) : (
