@@ -1,11 +1,11 @@
 import dbConnect from "../../lib/mongodb";
 import User from "../../models/user";
 import bcrypt from "bcryptjs";
+
 export default async function handler(req, res) {
-  const { method } = req;
   await dbConnect();
-  switch (method) {
-    case "GET":
+  switch (req.method) {
+    case "GET": // API endpoint to verify user
       try {
         const user = await User.findOne({
           email: req.query.email,
@@ -15,13 +15,9 @@ export default async function handler(req, res) {
             message: "User not found",
           });
         } else {
-            console.log(user.password,req.query.password);
           bcrypt.compare(req.query.password, user.password, (err, result) => {
-            // console.log(result);
             if (result) {
-              res
-                .status(200)
-                .send({ message: "User authenticated", success: true });
+              res.status(200).send(user);
             } else {
               res
                 .status(400)
@@ -35,30 +31,40 @@ export default async function handler(req, res) {
       break;
 
     case "POST":
-      const { name, email, password } = req.body;
-      const old = await User.findOne({ email: email });
-      if (!old) {
-        const hash = await bcrypt.hash(password, 10);
-        const user = new User({
-          name: name,
-          password: hash,
-          email: email,
-        });
-        user
-          .save()
-          .then((user) => {
-            res.status(200).send({ message: "User created", success: true });
-          })
-          .catch((err) => {
-            res
-              .status(500)
-              .send({ message: "Internal server error", success: false, err });
+      try {
+        const { name, email, password } = req.body;
+        const exist = await User.findOne({ email: email });
+        if (!exist) {
+          const user = new User({
+            name: name,
+            password: password,
+            email: email,
           });
-      } else {
-        res
-          .status(400)
-          .send({ message: "User already exists", success: undefined });
+          user
+            .save()
+            .then((user) => {
+              res
+                .status(200)
+                .send({ message: "User created", success: true, user });
+            })
+            .catch((err) => {
+              res
+                .status(500)
+                .send({
+                  message: "Internal server error",
+                  success: false,
+                  err,
+                });
+            });
+        } else {
+          res
+            .status(400)
+            .send({ message: "User already exists", success: undefined });
+        }
+      } catch (err) {
+        res.status(500).send(err);
       }
+
       break;
     default:
       res.status(405).send({

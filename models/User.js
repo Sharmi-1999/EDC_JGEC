@@ -20,7 +20,9 @@ const userSchema = new Schema({
     ref: "Blog",
   },
 });
+
 userSchema.pre("save", function (next) {
+  //Hashing the password before saving it to the database
   const user = this;
   bcrypt.genSalt(10, function (err, salt) {
     if (err) {
@@ -35,4 +37,5 @@ userSchema.pre("save", function (next) {
     });
   });
 });
+
 module.exports = mongoose.models.User || mongoose.model("User", userSchema);
