@@ -1,9 +1,9 @@
+@import url("http://fonts.cdnfonts.com/css/cloister-black");
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 a {
@@ -21,6 +21,6 @@ a {
   }
   body {
     color: white;
-    background: black;
+    background: rgb(47, 47, 47);
   }
 }

@@ -1,28 +1,73 @@
+/* eslint-disable @next/next/no-img-element */
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
+import Link from "next/link";
+import styled from "styled-components";
+import {
+  Drawer,
+  Typography,
+  Menu,
+  MenuItem,
+  Toolbar,
+  AppBar,
+  Box,
+  Container,
+  Avatar,
+  Button,
+  Tooltip,
+  IconButton,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-
-const pages = ["Products", "Pricing", "Blog"];
+import {
+  Article,
+  Collections,
+  ConnectWithoutContact,
+  Diversity1,
+  Event,
+  Home,
+  Info,
+} from "@mui/icons-material";
+const pages = [
+  {
+    name: "Home",
+    link: "/",
+    icon: <Home />,
+  },
+  {
+    name: "About",
+    link: "/about",
+    icon: <Info />,
+  },
+  {
+    name: "Blogs",
+    link: "/blogs",
+    icon: <Article />,
+  },
+  {
+    name: "Events",
+    link: "/events",
+    icon: <Event />,
+  },
+  {
+    name: "Gallery",
+    link: "/gallery",
+    icon: <Collections />,
+  },
+  {
+    name: "Team",
+    link: "/team",
+    icon: <Diversity1 />,
+  },
+  {
+    name: "Contact Us",
+    link: "/contact",
+    icon: <ConnectWithoutContact />,
+  },
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const Nav = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+const Appbar = () => {
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -36,79 +81,132 @@ const Nav = () => {
   };
 
   return (
-    <AppBar position="sticky" color="transparent" elevation={24}>
+    <AppBar
+      position="sticky"
+      sx={{
+        backgroundColor: "#800000aa",
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img height="70" src="https://i.imgur.com/4YIP5wS.png" alt="Logo" />
+          <IconButton sx={{ display: { xs: "none", md: "flex" } }}>
+            <img
+              src="https://i.imgur.com/4YIP5wS.png"
+              width="50"
+              height="50"
+              alt="logo"
+            />
+          </IconButton>
+
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleOpenNavMenu}
+              onClick={() => setDrawerOpen(true)}
               color="inherit"
             >
               <MenuIcon />
             </IconButton>
+            <Drawer
+              anchor="left"
+              open={drawerOpen}
+              onClose={() => setDrawerOpen(false)}
+            >
+              <Box
+                sx={{
+                  width: 250,
+                  height: "100%",
+                }}
+              >
+                {pages.map((page, index) => (
+                  <Link href={page.link} key={index}>
+                    <MenuItem
+                      sx={{
+                        display: "flex",
+                        margin: '0.5rem',
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        color: "maroon",
+                      }}
+                      key={index}
+                      onClick={() => setDrawerOpen(false)}
+                    >
+                      {page.icon}
+                      <Typography
+                        fontFamily="Times New Roman"
+                        variant="body1"
+                        sx={{ fontWeight: "bold", fontSize: "20px" }}
+                      >
+                        {page.name}
+                      </Typography>
+                    </MenuItem>
+                  </Link>
+                ))}
+              </Box>
+              <img
+                width="100px"
+                style={{ margin: "auto" }}
+                src="https://i.imgur.com/4YIP5wS.png"
+                alt="logo"
+              />
+            </Drawer>
+          </Box>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            {pages.map((page, index) => (
+              <Link
+                key={page}
+                href={page.link}
+                // onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                <NavBtn>{page.name}</NavBtn>
+              </Link>
+            ))}
+          </Box>
+
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Open settings">
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              </IconButton>
+            </Tooltip>
             <Menu
+              sx={{ mt: "45px" }}
               id="menu-appbar"
-              anchorEl={anchorElNav}
+              anchorEl={anchorElUser}
               anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
+                vertical: "top",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
                 vertical: "top",
-                horizontal: "left",
+                horizontal: "right",
               }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
+              {settings.map((setting, index) => (
+                <Button key={setting} onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">{setting}</Typography>
+                </Button>
               ))}
             </Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
           </Box>
         </Toolbar>
       </Container>
     </AppBar>
   );
 };
-export default Nav;
+export default Appbar;
+const NavBtn = styled.div`
+  margin: 1rem;
+  cursor: pointer;
+  border: 0px dotted #800000;
+  padding: 0.5rem;
+  &:hover {
+    box-shadow: 0px 0px 10px #800000aa;
+  }
+`;
