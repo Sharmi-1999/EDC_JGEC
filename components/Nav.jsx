@@ -82,10 +82,11 @@ const Appbar = () => {
 
   return (
     <AppBar
-      position="sticky"
+      position="fixed"
       sx={{
-        backgroundColor: "#800000aa",
+        backgroundColor: "#ffffffdd",
       }}
+      className="animate__animated animate__fadeInDown animate__slow"
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -125,7 +126,7 @@ const Appbar = () => {
                     <MenuItem
                       sx={{
                         display: "flex",
-                        margin: '0.5rem',
+                        margin: "0.5rem",
                         alignItems: "center",
                         justifyContent: "space-between",
                         color: "maroon",
@@ -159,7 +160,7 @@ const Appbar = () => {
                 key={page}
                 href={page.link}
                 // onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: "maroon", display: "block" }}
               >
                 <NavBtn>{page.name}</NavBtn>
               </Link>
@@ -204,9 +205,11 @@ export default Appbar;
 const NavBtn = styled.div`
   margin: 1rem;
   cursor: pointer;
+  color: maroon;
   border: 0px dotted #800000;
+  border-radius: 5px;
   padding: 0.5rem;
   &:hover {
-    box-shadow: 0px 0px 10px #800000aa;
+    box-shadow: 0px 0px 3px #800000aa;
   }
 `;

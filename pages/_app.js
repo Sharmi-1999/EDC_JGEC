@@ -7,15 +7,15 @@ import { useEffect } from "react";
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   useEffect(() => {
     AOS.init({
-      duration: 2000,
+      duration: 1000,
       easing: "ease-out-cubic",
-      once: true,
+      once: false,
       offset: 50,
     });
   }, []);
   return (
     <SessionProvider session={session} refetchInterval={5 * 60}>
-      <Appbar />
+        <Appbar />
       <Component {...pageProps} />
     </SessionProvider>
   );
