@@ -68,7 +68,7 @@ export default function Home() {
           backgroundAttachment: "fixed",
         }}
       >
-        <StyledPaper data-aos="zoom-in">
+        <StyledPaper>
           <StyledBox data-aos="flip-up">
             <Typography
               variant="h3"
@@ -126,7 +126,7 @@ export default function Home() {
                 300+ members. We have a dedicated core team working behind us
                 everyday aiding in the flourishing of the community as well also
                 helps us to focus to our objective. In a word we say " No what
-                ifs . Let's make it happen "
+                ifs . Let's make it happen."
               </Typography>
             </HistoryCard>
           </StyledBox>
@@ -157,13 +157,40 @@ export default function Home() {
         </Typography>
         <EventWrapper>
           <EventCard>
-            <EventImage src="/assets/placeholders/tedx_ayan.jpg" alt="Event" />
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+                <EventImage
+                  src="/assets/placeholders/tedx_ayan.jpg"
+                  alt="tedx"
+                />
+              </div>
+              <div className="flip-card-back">
+                <h5>behnka</h5>
+                <p>tit</p>
+              </div>
+            </div>
           </EventCard>
           <EventCard>
-            <EventImage src="/assets/placeholders/bquiz.jpg" alt="Event" />
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+                <EventImage src="/assets/placeholders/bquiz.jpg" alt="tedx" />
+              </div>
+              <div className="flip-card-back">
+                <h5>behnka</h5>
+                <p>tit</p>
+              </div>
+            </div>
           </EventCard>
           <EventCard>
-            <EventImage src="/assets/placeholders/bplan.jpg" alt="Event" />
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+                <EventImage src="/assets/placeholders/bplan.jpg" alt="tedx" />
+              </div>
+              <div className="flip-card-back">
+                <h5>behnka</h5>
+                <p>tit</p>
+              </div>
+            </div>
           </EventCard>
         </EventWrapper>
       </Box>
@@ -198,10 +225,11 @@ const HistoryCard = styled(VisionCard)`
     }
 `;
 const StyledPaper = styled(Paper)`
-  width: 96vw;
+  width: 100vw;
+  padding: 20px 30px;
   min-height: 96vh;
   margin: auto;
-  padding: 20px;
+  border-radius: 0;
   background-color: #f5f5f5bb;
 `;
 const StyledBox = styled(Box)`
@@ -219,23 +247,44 @@ const EventWrapper = styled.div`
 const EventCard = styled.div`
   width: 360px;
   height: 400px;
-  position: relative;
-  border-radius: 15px;
-  background-color: #00000060;
-  border: 1px solid gold;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  margin: 10px;
+  border-radius: 10px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .flip-card-back {
+    color: white;
+    background-color: #ffffff40;
+    transform: rotateY(180deg);
+  }
+  &:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
 `;
 const EventImage = styled.img`
-  margin: 10px;
   width: 100%;
-  position: absolute;
   height: 100%;
   border-radius: 15px;
-  transition: margin 0.3s ease-out;
-  &:hover {
-    margin: 0px;
-    transition: margin 0.5s ease-in-out;
-  }
 `;
 
 const Img = styled.img`

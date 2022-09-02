@@ -190,9 +190,11 @@ const Appbar = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting, index) => (
-                <Button key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </Button>
+                <MenuItem key={index}>
+                  <Button key={setting} onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">{setting}</Typography>
+                  </Button>
+                </MenuItem>
               ))}
             </Menu>
           </Box>
