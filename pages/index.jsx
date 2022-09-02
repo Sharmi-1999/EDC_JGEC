@@ -4,6 +4,7 @@ import "animate.css";
 
 import Loader from "../components/Loader";
 import styled from "styled-components";
+import Link from "next/link";
 export default function Home() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -57,7 +58,7 @@ export default function Home() {
       </Box>
       <Box
         style={{
-          height: "100vh",
+          minHeight: "100vh",
           width: "100vw",
           backgroundColor: "white",
           backgroundImage: `url("/assets/backgrounds/corporate.jpg")`,
@@ -71,17 +72,19 @@ export default function Home() {
           <StyledBox data-aos="flip-up">
             <Typography
               variant="h3"
-              sx={{}}
+              sx={{ fontSize: "4vw" }}
               fontFamily={"Comic Sans MS"}
               color="maroon"
+              gutterBottom
             >
-              >> Our Vision
+              &gt;&gt; Our Vision
             </Typography>
             <VisionCard>
               <Img src="/assets/placeholders/compass.jpg" />
               <Typography
-                variant="h6"
-                sx={{ color: "brown" }}
+                variant="p"
+                component={"p"}
+                sx={{ color: "brown", margin: "auto 0" }}
                 fontFamily={"Comic Sans MS"}
               >
                 The vision of EDC JGEC is, “To be a well recognized center of
@@ -98,21 +101,23 @@ export default function Home() {
               </Typography>
             </VisionCard>
           </StyledBox>
-          <hr/>
-          <StyledBox data-aos="flip-up">
+          <StyledBox data-aos="flip-down">
             <Typography
               variant="h3"
-              sx={{}}
+              sx={{ fontSize: "4vw" }}
               fontFamily={"Comic Sans MS"}
+              align="right"
               color="maroon"
+              gutterBottom
             >
-              >> How It All Started...
+              How It All Started... &lt;&lt;
             </Typography>
-            <VisionCard>
+            <HistoryCard>
               <Img src="/assets/placeholders/sticky_notes.jpg" />
               <Typography
-                variant="h6"
-                sx={{ color: "brown" }}
+                variant="p"
+                component="p"
+                sx={{ color: "brown", margin: "auto 0" }}
                 fontFamily={"Comic Sans MS"}
               >
                 It all started way back in 2019 when the idea of JOB CREATORS
@@ -123,9 +128,44 @@ export default function Home() {
                 helps us to focus to our objective. In a word we say " No what
                 ifs . Let's make it happen "
               </Typography>
-            </VisionCard>
+            </HistoryCard>
           </StyledBox>
         </StyledPaper>
+      </Box>
+      <Box
+        style={{
+          minHeight: "50vh",
+          width: "100vw",
+          backgroundImage: `url("/assets/backgrounds/mic.jpg")`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+          padding: "40px",
+        }}
+      >
+        <Typography
+          sx={{
+            fontSize: "3vw",
+            textShadow: "2px 2px maroon",
+            width: "fit-content",
+            borderRadius: "10px",
+            padding: "10px",
+          }}
+        >
+          EVENTS
+        </Typography>
+        <EventWrapper>
+          <EventCard>
+            <EventImage src="/assets/placeholders/tedx_ayan.jpg" alt="Event" />
+          </EventCard>
+          <EventCard>
+            <EventImage src="/assets/placeholders/bquiz.jpg" alt="Event" />
+          </EventCard>
+          <EventCard>
+            <EventImage src="/assets/placeholders/bplan.jpg" alt="Event" />
+          </EventCard>
+        </EventWrapper>
       </Box>
     </>
   );
@@ -139,6 +179,22 @@ const VisionCard = styled.div`
     flex-direction: column;
     Img{
       margin: 20px 0;
+      width: 100%;
+    }
+    p{
+      text-align: center;
+    }
+`;
+const HistoryCard = styled(VisionCard)`
+  flex-direction: row-reverse;
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    Img{
+      margin: 20px 0;
+      width: 100%;
+    }
+    p{
+      text-align: center;
     }
 `;
 const StyledPaper = styled(Paper)`
@@ -149,8 +205,39 @@ const StyledPaper = styled(Paper)`
   background-color: #f5f5f5bb;
 `;
 const StyledBox = styled(Box)`
-margin: 25px auto;
+  margin: 25px auto;
 `;
+const EventWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  `;
+const EventCard = styled.div`
+  width: 360px;
+  height: 400px;
+  position: relative;
+  border-radius: 15px;
+  background-color: #00000060;
+  border: 1px solid gold;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+`;
+const EventImage = styled.img`
+  margin: 10px;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  border-radius: 15px;
+  transition: margin 0.3s ease-out;
+  &:hover {
+    margin: 0px;
+    transition: margin 0.5s ease-in-out;
+  }
+`;
+
 const Img = styled.img`
   object-fit: cover;
   height: 30vh;
@@ -158,4 +245,5 @@ const Img = styled.img`
   border-radius: 10px;
   border: 2px solid maroon;
   margin: auto 30px;
+  width: 40vh;
 `;
