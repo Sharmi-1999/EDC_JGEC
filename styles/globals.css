@@ -1,8 +1,7 @@
-@import url("http://fonts.cdnfonts.com/css/cloister-black");
 html,
 body {
-  padding: 0;
-  margin: 0;
+  padding: 0px !important;
+  margin:  0px !important;
   font-family: "Times New Roman", Times, serif;
   overflow-x: hidden;
 }

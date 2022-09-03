@@ -25,7 +25,7 @@ export default function Home() {
           alignItems: "center",
           flexDirection: "column",
           backgroundImage: `url("/assets/backgrounds/nasa_earth.jpg")`,
-          backgroundSize: "cover",
+          backgroundSize: "auto",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -36,6 +36,7 @@ export default function Home() {
             sx={{
               fontSize: "6vw",
               textShadow: "6px 2px maroon",
+              color:"#ffffffdd"
             }}
             variant={"h2"}
             fontFamily={"Cloister black"}
@@ -48,6 +49,7 @@ export default function Home() {
             sx={{
               fontSize: "4vw",
               textShadow: "2px 2px maroon",
+              color:"#ffffffdd"
             }}
             variant={"h2"}
             fontFamily={"Cloister black"}

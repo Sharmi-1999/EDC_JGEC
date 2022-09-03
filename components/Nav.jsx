@@ -15,6 +15,13 @@ import {
   Button,
   Tooltip,
   IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText
+
+
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import {
@@ -26,6 +33,7 @@ import {
   Home,
   Info,
 } from "@mui/icons-material";
+import { color } from "@mui/system";
 const pages = [
   {
     name: "Home",
@@ -64,16 +72,17 @@ const pages = [
   },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
 const Appbar = () => {
-  const [drawerOpen, setDrawerOpen] = React.useState(false);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [drawerOpen,setDrawerOpen] =React.useState(false)
+  const handleOpenDrawerMenu= ()=>{
+    setDrawerOpen(true);
+  };
+  const handleCloseDrawerMenu= ()=>{
+    setDrawerOpen(false)
+  };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
   };
 
   const handleCloseUserMenu = () => {
@@ -81,92 +90,107 @@ const Appbar = () => {
   };
 
   return (
-    <AppBar
-      position="fixed"
-      sx={{
-        backgroundColor: "#ffffffdd",
-      }}
-      className="animate__animated animate__fadeInDown animate__slow"
-    >
+    <AppBar position="fixed" sx={{backgroundColor: "#ffffffdd",padding:"0px !important"}} className="animate__animated animate__fadeInDown">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <IconButton sx={{ display: { xs: "none", md: "flex" } }}>
-            <img
-              src="https://i.imgur.com/4YIP5wS.png"
-              width="50"
-              height="50"
-              alt="logo"
-            />
+            <Link href="/">
+              <img
+                src="https://i.imgur.com/4YIP5wS.png"
+                width="50"
+                height="50"
+                alt="logo"
+              />
+            </Link>
           </IconButton>
+          <Typography
+            variant="h6"
+            noWrap
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: '#800000',
+              textDecoration: 'none',
+              fontFamily :"Cloister black"
+            }}
+          ><Link href = "/"> 
+            EDC
+          </Link>
+          </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={() => setDrawerOpen(true)}
+              onClick={handleOpenDrawerMenu}
               color="inherit"
             >
-              <MenuIcon />
+              <MenuIcon sx={{color:"#800000"}} />
             </IconButton>
             <Drawer
-              anchor="left"
               open={drawerOpen}
-              onClose={() => setDrawerOpen(false)}
+              onClose={handleCloseDrawerMenu}
             >
-              <Box
-                sx={{
-                  width: 250,
-                  height: "100%",
-                }}
-              >
-                {pages.map((page, index) => (
-                  <Link href={page.link} key={index}>
-                    <MenuItem
-                      sx={{
-                        display: "flex",
-                        margin: "0.5rem",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        color: "maroon",
-                      }}
-                      key={index}
-                      onClick={() => setDrawerOpen(false)}
-                    >
+              <List>
+                {pages.map((page)=>
+                (<Link href={page.link} key={page.name}>
+                  <ListItem disablePadding onClick={handleCloseDrawerMenu}>
+                  <ListItemButton>
+                    <ListItemIcon sx={{color:"#800000"}}>
                       {page.icon}
-                      <Typography
-                        fontFamily="Times New Roman"
-                        variant="body1"
-                        sx={{ fontWeight: "bold", fontSize: "20px" }}
-                      >
-                        {page.name}
-                      </Typography>
-                    </MenuItem>
-                  </Link>
-                ))}
-              </Box>
-              <img
-                width="100px"
-                style={{ margin: "auto" }}
-                src="https://i.imgur.com/4YIP5wS.png"
-                alt="logo"
-              />
+                    </ListItemIcon>
+                    <ListItemText primary={page.name}  sx={{color:"#800000"}}/>
+                  </ListItemButton>
+                </ListItem>
+              </Link>))}
+              </List>
             </Drawer>
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page, index) => (
-              <Link
-                key={page}
-                href={page.link}
-                // onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "maroon", display: "block" }}
-              >
-                <NavBtn>{page.name}</NavBtn>
-              </Link>
+          <IconButton sx={{ display: { xs: "block", md: "none" } }} href="/">
+            <Link href="/">
+              <img
+                src="https://i.imgur.com/4YIP5wS.png"
+                width="50"
+                height="50"
+                alt="logo"
+              />
+            </Link>
+          </IconButton>
+          <Typography
+            variant="h5"
+            noWrap
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: '#800000',
+              textDecoration: 'none',
+              fontFamily:"Cloister black"
+            }}
+          ><Link href="/">
+            EDC
+            </Link>
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) => (
+              <Button
+                key={page.name}
+                sx={{ my: 2, color: '#800000', display: 'block', fontWeight:"bold",':hover':{color:'#8b0000',textShadow:'0px 0px 3px #cf1020'} }}
+                >
+                <Link href={page.link}>
+                {page.name}
+                </Link>
+              </Button>
             ))}
           </Box>
-
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -174,26 +198,25 @@ const Appbar = () => {
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: "45px" }}
+              marginThreshold={0}
+              sx={{ mt: '10px'}} 
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
+                vertical: 'bottom',
+                horizontal: 'right',
               }}
               keepMounted
               transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
+                vertical: 'top',
+                horizontal: 'right',
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting, index) => (
-                <MenuItem key={index}>
-                  <Button key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </Button>
+              {settings.map((setting) => (
+                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -204,14 +227,3 @@ const Appbar = () => {
   );
 };
 export default Appbar;
-const NavBtn = styled.div`
-  margin: 1rem;
-  cursor: pointer;
-  color: maroon;
-  border: 0px dotted #800000;
-  border-radius: 5px;
-  padding: 0.5rem;
-  &:hover {
-    box-shadow: 0px 0px 3px #800000aa;
-  }
-`;
