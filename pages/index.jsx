@@ -1,10 +1,11 @@
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, IconButton, Paper, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import "animate.css";
 
 import Loader from "../components/Loader";
 import styled from "styled-components";
 import Link from "next/link";
+import { KeyboardDoubleArrowRight } from "@mui/icons-material";
 export default function Home() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -36,7 +37,7 @@ export default function Home() {
             sx={{
               fontSize: "6vw",
               textShadow: "6px 2px maroon",
-              color:"#ffffffdd"
+              color: "#ffffffdd",
             }}
             variant={"h2"}
             fontFamily={"Cloister black"}
@@ -49,7 +50,7 @@ export default function Home() {
             sx={{
               fontSize: "4vw",
               textShadow: "2px 2px maroon",
-              color:"#ffffffdd"
+              color: "#ffffffdd",
             }}
             variant={"h2"}
             fontFamily={"Cloister black"}
@@ -75,7 +76,6 @@ export default function Home() {
             <Typography
               variant="h3"
               sx={{ fontSize: "4vw" }}
-              fontFamily={"Comic Sans MS"}
               color="maroon"
               gutterBottom
             >
@@ -87,7 +87,6 @@ export default function Home() {
                 variant="p"
                 component={"p"}
                 sx={{ color: "brown", margin: "auto 0" }}
-                fontFamily={"Comic Sans MS"}
               >
                 The vision of EDC JGEC is, “To be a well recognized center of
                 excellence for entrepreneurship development based on quality
@@ -107,7 +106,6 @@ export default function Home() {
             <Typography
               variant="h3"
               sx={{ fontSize: "4vw" }}
-              fontFamily={"Comic Sans MS"}
               align="right"
               color="maroon"
               gutterBottom
@@ -120,7 +118,6 @@ export default function Home() {
                 variant="p"
                 component="p"
                 sx={{ color: "brown", margin: "auto 0" }}
-                fontFamily={"Comic Sans MS"}
               >
                 It all started way back in 2019 when the idea of JOB CREATORS
                 instead of JOB SEEKERS sinked into our minds . We explored, grew
@@ -156,6 +153,21 @@ export default function Home() {
           }}
         >
           EVENTS
+          <Link href="/events">
+            <IconButton
+              sx={{
+                ml: "20px",
+                mt: "-5px",
+                borderRadius: "10px",
+                backgroundColor: "white",
+                ":hover": {
+                  backgroundColor: "white",
+                },
+              }}
+            >
+              <KeyboardDoubleArrowRight />
+            </IconButton>
+          </Link>
         </Typography>
         <EventWrapper>
           <EventCard>
@@ -167,8 +179,17 @@ export default function Home() {
                 />
               </div>
               <div className="flip-card-back">
-                <h5>behnka</h5>
-                <p>tit</p>
+                <Typography
+                  component="p"
+                  variant="p"
+                  sx={{
+                    fontSize: "20px",
+                    padding: "20px",
+                  }}
+                >
+                  On 11th February 2019, Entrepreneurship Development Cell, JGEC
+                  organized its first ever TEDx in the college campus.
+                </Typography>
               </div>
             </div>
           </EventCard>
@@ -178,8 +199,17 @@ export default function Home() {
                 <EventImage src="/assets/placeholders/bquiz.jpg" alt="tedx" />
               </div>
               <div className="flip-card-back">
-                <h5>behnka</h5>
-                <p>tit</p>
+                <Typography
+                  component="p"
+                  variant="p"
+                  sx={{
+                    fontSize: "20px",
+                    padding: "20px",
+                  }}
+                >
+                  The Biz Quiz, is an event to test the business knowledge of
+                  participants.
+                </Typography>
               </div>
             </div>
           </EventCard>
@@ -189,8 +219,18 @@ export default function Home() {
                 <EventImage src="/assets/placeholders/bplan.jpg" alt="tedx" />
               </div>
               <div className="flip-card-back">
-                <h5>behnka</h5>
-                <p>tit</p>
+                <Typography
+                  component="p"
+                  variant="p"
+                  sx={{
+                    fontSize: "20px",
+                    padding: "20px",
+                  }}
+                >
+                  The Business Plan Competition is an event to test the
+                  entrepreneurial skills of participants, where they can build
+                  and voice for their products in a real-life scenario.
+                </Typography>
               </div>
             </div>
           </EventCard>
@@ -276,7 +316,7 @@ const EventCard = styled.div`
   }
   .flip-card-back {
     color: white;
-    background-color: #ffffff40;
+    background-color: #00000040;
     transform: rotateY(180deg);
   }
   &:hover .flip-card-inner {
