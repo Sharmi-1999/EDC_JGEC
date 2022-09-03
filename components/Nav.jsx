@@ -2,6 +2,7 @@
 import * as React from "react";
 import Link from "next/link";
 import styled from "styled-components";
+import { useSession, signOut } from "next-auth/react";
 import {
   Drawer,
   Typography,
@@ -33,7 +34,8 @@ import {
   Home,
   Info,
 } from "@mui/icons-material";
-import { color } from "@mui/system";
+
+
 const pages = [
   {
     name: "Home",
@@ -71,14 +73,37 @@ const pages = [
     icon: <ConnectWithoutContact />,
   },
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = [
+  {
+    name:"Profile",
+    link:"/profile",
+    onc:()=>{}
+  },
+  {
+    name:"Dashboard",
+    link:"/dashboard",
+    onc:()=>{}
+  },
+  {
+    name:"Account",
+    link:"/account",
+    onc:()=>{}
+  },
+  {
+    name:"Logout",
+    link:"",
+    onc:()=>{signOut({callbackUrl: '/'})}
+  }
+];
 const Appbar = () => {
+  const { data: session, status } = useSession();
+  console.log(session);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const [drawerOpen,setDrawerOpen] =React.useState(false)
-  const handleOpenDrawerMenu= ()=>{
+  const [drawerOpen, setDrawerOpen] = React.useState(false)
+  const handleOpenDrawerMenu = () => {
     setDrawerOpen(true);
   };
-  const handleCloseDrawerMenu= ()=>{
+  const handleCloseDrawerMenu = () => {
     setDrawerOpen(false)
   };
   const handleOpenUserMenu = (event) => {
@@ -88,9 +113,9 @@ const Appbar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
+  // if(status === "loading") return <></>
   return (
-    <AppBar position="fixed" sx={{backgroundColor: "#ffffffdd",padding:"0px !important"}} className="animate__animated animate__fadeInDown">
+    <AppBar position="fixed" sx={{ backgroundColor: "#ffffffdd", padding: "0px !important" }} className="animate__animated animate__fadeInDown">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <IconButton sx={{ display: { xs: "none", md: "flex" } }}>
@@ -114,11 +139,11 @@ const Appbar = () => {
               letterSpacing: '.3rem',
               color: '#800000',
               textDecoration: 'none',
-              fontFamily :"Cloister black"
+              fontFamily: "Cloister black"
             }}
-          ><Link href = "/"> 
-            EDC
-          </Link>
+          ><Link href="/">
+              EDC
+            </Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -130,24 +155,24 @@ const Appbar = () => {
               onClick={handleOpenDrawerMenu}
               color="inherit"
             >
-              <MenuIcon sx={{color:"#800000"}} />
+              <MenuIcon sx={{ color: "#800000" }} />
             </IconButton>
             <Drawer
               open={drawerOpen}
               onClose={handleCloseDrawerMenu}
             >
               <List>
-                {pages.map((page)=>
+                {pages.map((page) =>
                 (<Link href={page.link} key={page.name}>
                   <ListItem disablePadding onClick={handleCloseDrawerMenu}>
-                  <ListItemButton>
-                    <ListItemIcon sx={{color:"#800000"}}>
-                      {page.icon}
-                    </ListItemIcon>
-                    <ListItemText primary={page.name}  sx={{color:"#800000"}}/>
-                  </ListItemButton>
-                </ListItem>
-              </Link>))}
+                    <ListItemButton>
+                      <ListItemIcon sx={{ color: "#800000" }}>
+                        {page.icon}
+                      </ListItemIcon>
+                      <ListItemText primary={page.name} sx={{ color: "#800000" }} />
+                    </ListItemButton>
+                  </ListItem>
+                </Link>))}
               </List>
             </Drawer>
           </Box>
@@ -173,25 +198,26 @@ const Appbar = () => {
               letterSpacing: '.3rem',
               color: '#800000',
               textDecoration: 'none',
-              fontFamily:"Cloister black"
+              fontFamily: "Cloister black"
             }}
           ><Link href="/">
-            EDC
+              EDC
             </Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page.name}
-                sx={{ my: 2, color: '#800000', display: 'block', fontWeight:"bold",':hover':{color:'#8b0000',textShadow:'0px 0px 3px #cf1020'} }}
-                >
+                sx={{ my: 2, color: '#800000', display: 'block', fontWeight: "bold", ':hover': { color: '#8b0000', textShadow: '0px 0px 3px #cf1020' } }}
+              >
                 <Link href={page.link}>
-                {page.name}
+                  {page.name}
                 </Link>
               </Button>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 0 }}>
+
+          {session && status === "authenticated" && (<Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -199,7 +225,7 @@ const Appbar = () => {
             </Tooltip>
             <Menu
               marginThreshold={0}
-              sx={{ mt: '10px'}} 
+              sx={{ mt: '10px' }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
@@ -215,12 +241,20 @@ const Appbar = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                <MenuItem key={setting.name} onClick={handleCloseUserMenu}>
+                  <Link href={setting.link}><Typography textAlign="center" onClick={setting.onc()}>{setting.name}</Typography></Link>
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box>)}
+          {!session && status ==="unauthenticated" &&(
+            <Box sx={{flexGrow:0}}>
+              <Button><Link href={"/signup"}>SignUp</Link></Button>
+              <Button><Link href={"/login"}>LogIn</Link></Button>
+            </Box>
+          )
+          }
+
         </Toolbar>
       </Container>
     </AppBar>

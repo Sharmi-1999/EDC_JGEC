@@ -12,7 +12,7 @@
 import { signIn} from "next-auth/react";
 
 const handleSignUp = () => {
-    let email = "a@b.c";
+    let email = "a@l.c";
     let password = "123456";
     fetch('/api/user/signup', {
         method: 'POST',
