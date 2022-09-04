@@ -5,7 +5,7 @@ import { colors } from "../styles/colors";
 import Loader from "../components/Loader";
 import styled from "styled-components";
 import Link from "next/link";
-import { KeyboardDoubleArrowRight } from "@mui/icons-material";
+import { KeyboardDoubleArrowRight, Scale } from "@mui/icons-material";
 export default function Home() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -176,6 +176,10 @@ export default function Home() {
             width: "fit-content",
             borderRadius: "10px",
             padding: "10px",
+            ":first-letter": {
+              color: colors.warning,
+              fontSize: "4vw",
+            }
           }}
         >
           EVENTS
@@ -188,6 +192,8 @@ export default function Home() {
                 backgroundColor: "white",
                 ":hover": {
                   backgroundColor: "white",
+                  transform: "scale(1.1)",
+                  transition: "all 1s",
                 },
               }}
             >
@@ -367,6 +373,8 @@ const Img = styled.img`
   object-fit: cover;
   height: 30vh;
   border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;  margin: auto 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  margin: auto 30px;
   width: 40vh;
 `;

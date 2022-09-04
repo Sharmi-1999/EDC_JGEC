@@ -4,6 +4,7 @@ import Appbar from "../components/Nav";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Footer from "../components/Footer";
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   useEffect(() => {
     AOS.init({
@@ -15,8 +16,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   }, []);
   return (
     <SessionProvider session={session} refetchInterval={5 * 60}>
-        <Appbar />
+      <Appbar />
       <Component {...pageProps} />
+      <Footer />
     </SessionProvider>
   );
 }
