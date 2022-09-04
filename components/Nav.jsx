@@ -25,6 +25,8 @@ import {
 
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import LoginIcon from '@mui/icons-material/Login';
 import {
   Article,
   Collections,
@@ -72,6 +74,16 @@ const pages = [
     link: "/contact",
     icon: <ConnectWithoutContact />,
   },
+  {
+    name: "Sign Up",
+    link:"/signup",
+    icon:<PersonAddIcon/>
+  },
+  {
+    name: "Log In",
+    link:"/login",
+    icon:<LoginIcon/>
+  }
 ];
 const settings = [
   {
@@ -249,8 +261,8 @@ const Appbar = () => {
           </Box>)}
           {!session && status ==="unauthenticated" &&(
             <Box sx={{flexGrow:0}}>
-              <Button><Link href={"/signup"}>SignUp</Link></Button>
-              <Button><Link href={"/login"}>LogIn</Link></Button>
+              <Link href={"/signup"}><Button sx={{ml:"7px",display:{xs:'none',md:'inline'}}} variant="outlined" startIcon={<PersonAddIcon/>}>Sign Up</Button></Link>
+              <Link href={"/login"}><Button sx={{ml:"7px", display:{xs:'none',md:'inline'}}}variant="contained"  startIcon={<LoginIcon/>}>Log In</Button></Link>
             </Box>
           )
           }
