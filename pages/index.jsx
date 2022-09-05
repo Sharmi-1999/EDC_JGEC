@@ -2,7 +2,6 @@ import { Box, IconButton, Paper, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import "animate.css";
 import { colors } from "../styles/colors";
-import Loader from "../components/Loader";
 import styled from "styled-components";
 import Link from "next/link";
 import { KeyboardDoubleArrowRight, Scale } from "@mui/icons-material";
@@ -14,9 +13,7 @@ export default function Home() {
       setLoading(false);
     }, 500);
   }, []);
-  return loading ? (
-    <Loader />
-  ) : (
+  return (
     <>
       <Box
         sx={{
@@ -71,7 +68,7 @@ export default function Home() {
         }}
       >
         <StyledPaper>
-          <StyledBox data-aos="flip-up">
+          <StyledBox data-aos="fade-in">
             <Typography
               variant="h3"
               sx={{ fontSize: "4vw", fontWeight: "bold" }}
@@ -99,7 +96,7 @@ export default function Home() {
               </Typography>
             </RowCard>
           </StyledBox>
-          <StyledBox data-aos="flip-up">
+          <StyledBox data-aos="fade-in">
             <Typography
               variant="h3"
               sx={{ fontSize: "4vw", fontWeight: "bold" }}
@@ -127,7 +124,7 @@ export default function Home() {
               </Typography>
             </RowRevCard>
           </StyledBox>
-          <StyledBox data-aos="flip-up">
+          <StyledBox data-aos="fade-in">
             <Typography
               variant="h3"
               sx={{ fontSize: "4vw", fontWeight: "bold" }}
@@ -179,7 +176,7 @@ export default function Home() {
             ":first-letter": {
               color: colors.warning,
               fontSize: "4vw",
-            }
+            },
           }}
         >
           EVENTS
