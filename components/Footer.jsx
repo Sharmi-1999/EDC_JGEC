@@ -9,7 +9,7 @@ function ContactForm() {
   }
   return (
     <React.Fragment>
-      <form onSubmit={handleSubmit} style={{width:'60%', minWidth:'360px'}}>
+      <form onSubmit={handleSubmit} style={{ width: "60%", minWidth: "360px" }}>
         <div>
           <TextField
             id="email"
@@ -77,7 +77,7 @@ function ContactForm() {
 }
 export default function Footer() {
   return (
-    <Box>
+    <Box sx={{}}>
       <Box
         sx={{
           minHeight: "300px",
@@ -126,7 +126,7 @@ export default function Footer() {
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </Box>
       </Box>
@@ -140,8 +140,8 @@ export default function Footer() {
         }}
       >
         <Typography>
-          &#169;&nbsp;Entrepreneurship & Development Cell, Jalpaiguri Government
-          Engineering College
+          Entrepreneurship & Development Cell, Jalpaiguri Government Engineering
+          College &nbsp;&#169;&nbsp;2022
         </Typography>
       </Box>
     </Box>
