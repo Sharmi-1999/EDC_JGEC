@@ -88,17 +88,17 @@ const settings = [
   {
     name: "Profile",
     link: "/profile",
-    onc: () => {},
+    onc: () => { },
   },
   {
     name: "Dashboard",
     link: "/dashboard",
-    onc: () => {},
+    onc: () => { },
   },
   {
     name: "Account",
     link: "/account",
-    onc: () => {},
+    onc: () => { },
   },
   {
     name: "Logout",
@@ -147,10 +147,11 @@ const Appbar = (props) => {
   };
   // if(status === "loading") return <></>
   return (
-    <React.Fragment>
+    <React.Fragment >
       <CssBaseline />
       <ElevationScroll {...props}>
         <AppBar
+          id="navbar"
           position="fixed"
           color="transparent"
           sx={{ padding: "0px !important" }}
@@ -178,7 +179,7 @@ const Appbar = (props) => {
                   onClick={handleOpenDrawerMenu}
                   color="inherit"
                 >
-                  <MenuIcon />
+                  <MenuIcon sx={{ color: "#fff" }} />
                 </IconButton>
                 <Drawer open={drawerOpen} onClose={handleCloseDrawerMenu}>
                   <List>
@@ -227,27 +228,29 @@ const Appbar = (props) => {
                   page.name === "Sign Up" || page.name === "Log In" ? (
                     <></>
                   ) : (
-                    <Button
-                      key={page.name}
-                      sx={{
-                        mx: 2,
-                        color: "white",
-                        display: "block",
-                        fontWeight: "bold",
-                        backgroundColor:
-                          router.pathname === page.link
-                            ? colors.secondary
-                            : null,
-                        ":hover": {
+                    <Link href={page.link}>
+                      <Button
+                        key={page.name}
+                        sx={{
+                          mx: 2,
+                          color: "white",
+                          display: "block",
+                          fontWeight: "bold",
                           backgroundColor:
                             router.pathname === page.link
-                              ? "#ff0000aa"
-                              : "#333333aa",
-                        },
-                      }}
-                    >
-                      <Link href={page.link}>{page.name}</Link>
-                    </Button>
+                              ? colors.secondary
+                              : null,
+                          ":hover": {
+                            backgroundColor:
+                              router.pathname === page.link
+                                ? "#ff0000aa"
+                                : "#333333aa",
+                          },
+                        }}
+                      >
+                        {page.name}
+                      </Button>
+                    </Link>
                   )
                 )}
               </Box>
@@ -311,7 +314,7 @@ const Appbar = (props) => {
                   <Link href={"/login"}>
                     <Button
                       sx={{
-                        ml: "7px",
+                        // ml: "7px",
                         display: { xs: "none", md: "inline" },
                         color: colors.primary,
                       }}

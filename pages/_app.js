@@ -3,6 +3,7 @@ import { SessionProvider } from "next-auth/react";
 import Appbar from "../components/Nav";
 import AOS from "aos";
 import Loader from "../components/Loader";
+import { Box } from "@mui/material";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
@@ -22,6 +23,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   ) : (
     <SessionProvider session={session} refetchInterval={5 * 60}>
       <Appbar />
+      <Box sx={{mt:{xs:"86px",md:"76px"}}}/>
       <Component {...pageProps} />
       <Footer />
     </SessionProvider>

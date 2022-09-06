@@ -139,7 +139,7 @@ export default function Footer() {
           alignItems: "center",
         }}
       >
-        <Typography>
+        <Typography sx={{color:"#fff"}}>
           Entrepreneurship & Development Cell, Jalpaiguri Government Engineering
           College &nbsp;&#169;&nbsp;2022
         </Typography>
