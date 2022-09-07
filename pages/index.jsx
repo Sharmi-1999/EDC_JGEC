@@ -17,7 +17,7 @@ export default function Home() {
     <>
       <Box
         sx={{
-          minHeight: {xs:"calc(100vh - 86px)",md:"calc(100vh - 76px)"},
+          minHeight: { xs: "calc(100vh - 86px)", md: "calc(100vh - 76px)" },
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -86,8 +86,8 @@ export default function Home() {
                 an excellent mentorship throughout the journey, EDC JGEC
                 believes, that every blooming entrepreneural idea will blossom
                 into a success story. We have an unrivalled capacity to incubate
-                innovations and foster real world solutions. I aim to carry this
-                forward and contribute substantially to the entrepreneurial
+                innovations and foster real world solutions. We aim to carry
+                this forward and contribute substantially to the entrepreneurial
                 growth in North Bengal.
               </Typography>
             </RowCard>
@@ -114,9 +114,9 @@ export default function Home() {
                 are some of the characteristics that define an entrepreneur. EDC
                 JGEC is about this and much more. We not only provide a platform
                 but create a perfect environment to hone and sharpen the
-                entrepreneurial genes in every aspiring heart. I, along with my
-                team, aim to create history of developing entrepreneurial minds
-                of the highest caliber.
+                entrepreneurial genes in every aspiring heart. We aim to create
+                history of developing entrepreneurial minds of the highest
+                caliber.
               </Typography>
             </RowRevCard>
           </StyledBox>
@@ -143,8 +143,8 @@ export default function Home() {
                 up from a small community of 10 members to a large community of
                 300+ members. We have a dedicated core team working behind us
                 everyday aiding in the flourishing of the community as well also
-                helps us to focus to our objective. In a word we say " No what
-                ifs . Let's make it happen."
+                helps us to focus to our objective. In a word we say &ldquo;No
+                what ifs . Let&lsquo;s make it happen.&rdquo;
               </Typography>
             </RowCard>
           </StyledBox>

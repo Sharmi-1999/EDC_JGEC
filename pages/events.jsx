@@ -27,11 +27,11 @@ export default function Events() {
           width: "100%",
           minHeight: "100vh",
           backgroundColor: colors.secondary,
-          backgroundImage: `url("/assets/backgrounds/circle-scatter-haikei.svg")`,
+          backgroundImage: `url("/assets/backgrounds/blob-scatter-haikei.svg")`,
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
           backgroundSize: "cover",
-          
+
           justifyContent: "center",
           alignItems: "center",
           display: "flex",
@@ -45,18 +45,18 @@ export default function Events() {
             </Typography>
             <Typography variant="p" component={"p"} fontWeight="bold">
               TEDx is an international community that celebrates locally driven
-              ideas and elevates them to a global stage. The 'x' in TEDx stands
-              for independently organized TED events, which is a nonprofit
-              organization devoted to spreading ideas usually in the form of
-              short, powerful talks. On 11th February 2019, EDC JGEC organized
-              the first ever TEDx event, for any state run engineering college
-              in West Bengal. We ignited a spark in our community by organizing
-              a day filled with brilliant speakers, thought-provoking ideas and
-              mind blowing conversations. Not only did our audience seek new
-              ideas, but our organizing team also benefitted greatly, as the
-              planning and execution of such an event requires leadership,
-              teamwork and coordination skills, that parallel those required in
-              the business world.
+              ideas and elevates them to a global stage. The &lsquo;x&rsquo; in
+              TEDx stands for independently organized TED events, which is a
+              nonprofit organization devoted to spreading ideas usually in the
+              form of short, powerful talks. On 11th February 2019, EDC JGEC
+              organized the first ever TEDx event, for any state run engineering
+              college in West Bengal. We ignited a spark in our community by
+              organizing a day filled with brilliant speakers, thought-provoking
+              ideas and mind blowing conversations. Not only did our audience
+              seek new ideas, but our organizing team also benefitted greatly,
+              as the planning and execution of such an event requires
+              leadership, teamwork and coordination skills, that parallel those
+              required in the business world.
             </Typography>
           </CardText>
           <CardImg>
@@ -86,16 +86,17 @@ export default function Events() {
               The B-Plan
             </Typography>
             <Typography variant="p" component={"p"} fontWeight="bold">
-              A business plan is a document that defines in detail a company's
-              objectives and how it plans to achieve its goals. A business plan
-              lays out a written road map for the firm from marketing,
-              financial, and operational standpoints. Both startups and
-              established companies use business plans. EDC was fortunate enough
-              to collaborate with young indians in our technical fest 'Sristi'
-              giving the students an oppurtunity of presenting their B-plans and
-              getting valuable inputs from the investors. The students showed
-              their gracious performance with soaring entrepreneurial thinkings
-              and impressing the investors with their capabilities
+              A business plan is a document that defines in detail a
+              company&lsquo;s objectives and how it plans to achieve its goals.
+              A business plan lays out a written road map for the firm from
+              marketing, financial, and operational standpoints. Both startups
+              and established companies use business plans. EDC was fortunate
+              enough to collaborate with young indians in our technical fest
+              &lsquo;Sristi&rsquo; giving the students an oppurtunity of
+              presenting their B-plans and getting valuable inputs from the
+              investors. The students showed their gracious performance with
+              soaring entrepreneurial thinkings and impressing the investors
+              with their capabilities
             </Typography>
           </CardText>
           <CardImg>
@@ -120,17 +121,17 @@ const Card = styled.div`
   box-shadow: rgb(1, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 0, 0, 0.5) -3px -3px 6px 1px inset;
   /*glassmorphism*/
-  backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(6px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(17, 25, 40, 0.75);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
 
-  h4{
-    color: ${colors.danger}
+  h4 {
+    color: ${colors.danger};
   }
-  p{
-    color: ${colors.grey}
+  p {
+    color: ${colors.grey};
   }
   :nth-of-type(even) {
     flex-direction: row-reverse;

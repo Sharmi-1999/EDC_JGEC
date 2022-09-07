@@ -243,8 +243,8 @@ const Appbar = (props) => {
                           ":hover": {
                             backgroundColor:
                               router.pathname === page.link
-                                ? "#ff0000aa"
-                                : "#333333aa",
+                                ? `${colors.danger}`
+                                : `${colors.darkGrey}`,
                           },
                         }}
                       >
