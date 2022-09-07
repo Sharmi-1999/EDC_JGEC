@@ -78,9 +78,9 @@ export default function Home() {
               <Typography
                 variant="p"
                 component={"p"}
-                color={colors.primary}
+                color={colors.secondary}
                 align="justify"
-                sx={{ margin: "auto 0", fontWeight: "bold" }}
+                sx={{ margin: "auto 0", fontWeight: "bold", fontSize: "20px" }}
               >
                 Right from infusing the spirit of entrepreneurship, to providing
                 an excellent mentorship throughout the journey, EDC JGEC
@@ -107,8 +107,8 @@ export default function Home() {
               <Typography
                 variant="p"
                 component="p"
-                color={colors.primary}
-                sx={{ margin: "auto 0", fontWeight: "bold" }}
+                color={colors.secondary}
+                sx={{ margin: "auto 0", fontWeight: "bold", fontSize: "20px" }}
               >
                 Creativity, professionalism, risk-taking, passion, social skills
                 are some of the characteristics that define an entrepreneur. EDC
@@ -135,8 +135,8 @@ export default function Home() {
               <Typography
                 variant="p"
                 component="p"
-                color={colors.primary}
-                sx={{ margin: "auto 0", fontWeight: "bold" }}
+                color={colors.secondary}
+                sx={{ margin: "auto 0", fontWeight: "bold", fontSize: "20px" }}
               >
                 It all started way back in 2019 when the idea of JOB CREATORS
                 instead of JOB SEEKERS sinked into our minds . We explored, grew
