@@ -23,6 +23,7 @@
     "next": "12.2.5",
     "next-auth": "^4.10.3",
     "path": "^0.12.7",
+    "pro-gallery": "^4.1.46",
     "prop-types": "^15.8.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",

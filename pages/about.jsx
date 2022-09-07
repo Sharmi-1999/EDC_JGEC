@@ -94,7 +94,7 @@ export default function Events() {
               promote, facilitate the business knowledge and develop the
               aspiring successful entrepreneurs imbibed with leadership
               qualities using innovative and ethical business practices to make
-              global impact". We also aim at developing interpersonality skills
+              global impact”. We also aim at developing interpersonality skills
               of our beloved student community.
             </Typography>
           </GlassCard>
@@ -112,7 +112,7 @@ export default function Events() {
                     sx={{
                       position: "relative",
                       top: "25%",
-                      color: colors.primary,
+                      color: colors.grey,
                       backgroundColor: colors.warning,
                       borderRadius: "50%",
                       left: "-20px",
@@ -152,7 +152,7 @@ export default function Events() {
                     sx={{
                       position: "relative",
                       top: "25%",
-                      color: colors.primary,
+                      color: colors.grey,
                       backgroundColor: colors.warning,
                       borderRadius: "50%",
                       right: "-20px",
@@ -196,7 +196,7 @@ const GlassCard = styled.div`
   justify-content: center;
   align-items: center;
   h4 {
-    color: ${colors.primary};
+    color: ${colors.danger};
     font-weight: bold;
     text-align: left;
     width: 100%;
@@ -217,7 +217,7 @@ const GlassRowCard = styled(GlassCard)`
 `;
 const StepCard = styled.div`
   width: 90%;
-  border-left: 5px solid ${colors.primary};
+  border-left: 5px solid ${colors.danger};
   min-height: 70px;
   display: flex;
   flex-direction: row;
@@ -234,7 +234,7 @@ const StepCard = styled.div`
 `;
 const StepCard2 = styled.div`
   width: 90%;
-  border-right: 5px solid ${colors.primary};
+  border-right: 5px solid ${colors.danger};
   min-height: 100px;
   display: flex;
   flex-direction: row;
