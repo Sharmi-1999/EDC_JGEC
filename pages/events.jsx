@@ -26,7 +26,12 @@ export default function Events() {
         sx={{
           width: "100%",
           minHeight: "100vh",
-          backgroundColor: "#fff",
+          backgroundColor: colors.secondary,
+          backgroundImage: `url("/assets/backgrounds/circle-scatter-haikei.svg")`,
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+          
           justifyContent: "center",
           alignItems: "center",
           display: "flex",
@@ -35,20 +40,10 @@ export default function Events() {
       >
         <Card>
           <CardText>
-            <Typography
-              variant="h4"
-              component={"h4"}
-              color={colors.primary}
-              fontWeight="bold"
-            >
+            <Typography variant="h4" component={"h4"} fontWeight="bold">
               TEDx JGEC
             </Typography>
-            <Typography
-              variant="p"
-              component={"p"}
-              color={colors.secondary}
-              fontWeight="bold"
-            >
+            <Typography variant="p" component={"p"} fontWeight="bold">
               TEDx is an international community that celebrates locally driven
               ideas and elevates them to a global stage. The 'x' in TEDx stands
               for independently organized TED events, which is a nonprofit
@@ -70,20 +65,10 @@ export default function Events() {
         </Card>
         <Card>
           <CardText>
-            <Typography
-              variant="h4"
-              component={"h4"}
-              color={colors.primary}
-              fontWeight="bold"
-            >
+            <Typography variant="h4" component={"h4"} fontWeight="bold">
               The Bizz Quiz
             </Typography>
-            <Typography
-              variant="p"
-              component={"p"}
-              color={colors.secondary}
-              fontWeight="bold"
-            >
+            <Typography variant="p" component={"p"} fontWeight="bold">
               The Biz Quiz, is an event to test the business knowledge of
               participants. Stretching across different business-related topics,
               the quiz will be a test of not just knowledge but also the lateral
@@ -97,20 +82,10 @@ export default function Events() {
         </Card>
         <Card>
           <CardText>
-            <Typography
-              variant="h4"
-              component={"h4"}
-              color={colors.primary}
-              fontWeight="bold"
-            >
+            <Typography variant="h4" component={"h4"} fontWeight="bold">
               The B-Plan
             </Typography>
-            <Typography
-              variant="p"
-              component={"p"}
-              color={colors.secondary}
-              fontWeight="bold"
-            >
+            <Typography variant="p" component={"p"} fontWeight="bold">
               A business plan is a document that defines in detail a company's
               objectives and how it plans to achieve its goals. A business plan
               lays out a written road map for the firm from marketing,
@@ -142,8 +117,21 @@ const Card = styled.div`
   margin: 20px 0;
   padding: 20px;
   height: 400px;
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  box-shadow: rgb(1, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 0, 0, 0.5) -3px -3px 6px 1px inset;
+  /*glassmorphism*/
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+
+  h4{
+    color: ${colors.danger}
+  }
+  p{
+    color: ${colors.grey}
+  }
   :nth-of-type(even) {
     flex-direction: row-reverse;
   }
