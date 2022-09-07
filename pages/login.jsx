@@ -37,7 +37,14 @@ const StyledTextField = styled(TextField)({
 
 export default function Login() {
     const [loginData, setLoginData] = React.useState({})
-    const handleLogin = () => { }
+    const handleLogin = async () => { 
+       let res = await signIn("credentials", { 
+            redirect:false, 
+            email: loginData.email, 
+            password: loginData.password 
+        })
+        console.log(res);
+    }
     const updateLoginData = (e) => {
         setLoginData((prev) => { return { ...prev, [e.target.name]: e.target.value } })
     }

@@ -145,7 +145,7 @@ const Appbar = (props) => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-  // if(status === "loading") return <></>
+  if(status === "loading") return <></>
   return (
     <React.Fragment >
       <CssBaseline />
@@ -290,7 +290,8 @@ const Appbar = (props) => {
                         <Link href={setting.link}>
                           <Typography
                             textAlign="center"
-                            onClick={setting.onc()}
+                            color={colors.black}
+                            onClick={setting.onc}
                           >
                             {setting.name}
                           </Typography>

@@ -20,7 +20,7 @@ export default function Events() {
         }}
         className="animate__animated animate__fadeInLeft"
       >
-        Contact Us
+        We would love to hear from you!
       </Typography>
       <Box
         sx={{
