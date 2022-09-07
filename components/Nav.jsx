@@ -320,7 +320,7 @@ const Appbar = (props) => {
                       }}
                       variant="contained"
                       color="inherit"
-                      startIcon={<LoginIcon />}
+                      startIcon={<LoginIcon style={{ fill: colors.primary }} />}
                     >
                       Log In
                     </Button>

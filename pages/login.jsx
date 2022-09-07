@@ -35,17 +35,19 @@ const StyledTextField = styled(TextField)({
     }
 });
 
-export default function SignUp() {
+export default function Login() {
     const [loginData, setLoginData] = React.useState({})
     const handleLogin = () => { }
     const updateLoginData = (e) => {
-        setLoginData((prev) => { return { ...prev, [e.target.id]: e.target.value } })
+        setLoginData((prev) => { return { ...prev, [e.target.name]: e.target.value } })
     }
-    console.log(loginData);
+    const updateRemember= (e) => {
+        setLoginData((prev) => { return { ...prev, [e.target.name]: e.target.checked } })
+    }
     return (
-        <Container sx={{ height: "70vh", width: "100vw", display: "flex", alignItems: "center", justifyContent: "space-evenly", flexDirection: "column", border: "2px solid black" }}>
+        <Container sx={{ height: "70vh", width: "100vw", display: "flex", alignItems: "center", justifyContent: "space-evenly", flexDirection: "column" }}>
             <Box>
-                <Typography fontFamily={"'Signika Negative', sans-serif;"} sx={{ fontSize: { xs: '30px', md: '45px', color: "#fff" } }}>
+                <Typography fontFamily={"'Signika Negative', sans-serif;"} sx={{ fontSize: { xs: '30px', md: '5vw', color: "#fff" } }}>
                     Log In to EDC JGEC
                 </Typography>
             </Box>
@@ -55,22 +57,22 @@ export default function SignUp() {
                     component={"form"}
                     variant={"outlined"}
                 >
-                    <StyledTextField sx={{ mb: "10px" }} fullWidth required id="email" label="Email" variant="outlined" onChange={updateLoginData} />
-                    <StyledTextField sx={{ mb: "10px" }} fullWidth required id="password" label="Password" type="password" variant="outlined" onChange={updateLoginData} />
-                    <FormControlLabel sx={{ mb: "10px", color: "white" }} control={<Checkbox id="remember" sx={{ color: "#fff", '&.Mui-checked': { color: "#fff" }, '&.MuiFormControlLabel-label': { color: "white" } }} onChange={updateLoginData} />} label="Remember Me" />
+                    <StyledTextField sx={{ mb: "10px" }} fullWidth required id="email" label="Email" variant="outlined" name="email" onChange={updateLoginData} />
+                    <StyledTextField sx={{ mb: "10px" }} fullWidth required id="password" label="Password" type="password" name="password" variant="outlined" onChange={updateLoginData} />
+                    <FormControlLabel sx={{ mb: "10px", color: "white" }} control={<Checkbox id="remember" name="remember" sx={{ color: "#fff", '&.Mui-checked': { color: "#fff" }, '&.MuiFormControlLabel-label': { color: "white" } }} onChange={updateRemember} />} label="Remember Me" />
                     <Button variant="contained" color="inherit" fullWidth onClick={handleLogin} sx={{ color: "#9f0037" }}>Log In</Button>
                 </FormControl>
                 <Grid container sx={{width:"50%"}}>
                     <Grid item xs >
-                        <Link href="#">
+                        {/* <Link href="#">
                             <Typography sx={{color:"white",textDecoration:"underline", fontWeight:"bold", ":hover":{fontWeight:"bold"}}} >
                             Forgot password?
                             </Typography>
-                        </Link>
+                        </Link> */}
                     </Grid>
                     <Grid item >
                         <Typography sx={{color:"white",textDecoration:"underline", fontWeight:"bold", ":hover":{fontWeight:"bold"}}}>
-                        <Link href="#">
+                        <Link href="signup">
                              Don't have an account? Sign Up
                         </Link>
                         </Typography>

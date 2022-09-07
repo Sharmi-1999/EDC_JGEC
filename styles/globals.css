@@ -18,13 +18,14 @@ background-attachment: fixed;
 background-size: cover;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
 
 * {
   box-sizing: border-box;
+  color: #fff;
+}
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 @media (prefers-color-scheme: dark) {
