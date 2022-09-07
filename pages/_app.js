@@ -16,6 +16,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
       once: false,
       offset: 50,
     });
+
     setTimeout(() => setLoading(false), 3000);
   }, []);
   return loading ? (
@@ -23,7 +24,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   ) : (
     <SessionProvider session={session} refetchInterval={5 * 60}>
       <Appbar />
-      <Box sx={{mt:{xs:"86px",md:"76px"}}}/>
+      <Box sx={{ mt: { xs: "86px", md: "76px" } }} />
       <Component {...pageProps} />
       <Footer />
     </SessionProvider>
