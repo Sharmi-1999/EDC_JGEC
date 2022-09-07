@@ -27,7 +27,7 @@ export default function Events() {
           width: "100%",
           minHeight: "100vh",
           backgroundColor: colors.secondary,
-          backgroundImage: `url("/assets/backgrounds/circle-scatter-haikei.svg")`,
+          backgroundImage: `url("/assets/backgrounds/blob-scatter-haikei.svg")`,
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
           backgroundSize: "cover",
@@ -120,7 +120,7 @@ const Card = styled.div`
   box-shadow: rgb(1, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 0, 0, 0.5) -3px -3px 6px 1px inset;
   /*glassmorphism*/
-  backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(6px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(17, 25, 40, 0.75);
   border-radius: 12px;
