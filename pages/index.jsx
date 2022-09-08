@@ -3,260 +3,277 @@ import { useEffect, useState } from "react";
 import "animate.css";
 import { colors } from "../styles/colors";
 import styled from "styled-components";
+import Layout from "../components/Layout";
 import Link from "next/link";
 import { KeyboardDoubleArrowRight, Scale } from "@mui/icons-material";
 export default function Home() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
+    document.title = "HOME | EDC";
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 500);
   }, []);
   return (
-    <>
-      <Box
-        sx={{
-          minHeight: { xs: "calc(100vh - 86px)", md: "calc(100vh - 76px)" },
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-        }}
-      >
-        <div className="animate__animated animate__fadeIn">
-          <Typography
-            sx={{
-              fontSize: "6vw",
-              textShadow: "6px 2px maroon",
-              color: colors.white,
-            }}
-            variant={"h2"}
-            fontFamily={"Cloister black"}
-          >
-            Entreprenuership & Development Cell
-          </Typography>
-        </div>
-        <div className="animate__animated animate__fadeIn">
-          <Typography
-            sx={{
-              fontSize: "4vw",
-              textShadow: "2px 2px maroon",
-              color: "#ffffffdd",
-            }}
-            variant={"h2"}
-            fontFamily={"Cloister black"}
-          >
-            Jalpaiguri Government Engineering College
-          </Typography>
-        </div>
-      </Box>
-      <Box
-        style={{
-          minHeight: "100vh",
-          width: "100vw",
-          backgroundColor: "white",
-          backgroundImage: `url("/assets/backgrounds/corporate.jpg")`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-        }}
-      >
-        <StyledPaper>
-          <StyledBox data-aos="fade-in">
-            <Typography
-              variant="h3"
-              sx={{ fontSize: "4vw", fontWeight: "bold" }}
-              gutterBottom
-              color={colors.primary}
-            >
-              What is EDC ?
-            </Typography>
-            <RowCard>
-              <Img src="/assets/placeholders/compass.jpg" />
-              <Typography
-                variant="p"
-                component={"p"}
-                color={colors.secondary}
-                align="justify"
-                sx={{ margin: "auto 0", fontWeight: "bold", fontSize: "20px" }}
-              >
-                Right from infusing the spirit of entrepreneurship, to providing
-                an excellent mentorship throughout the journey, EDC JGEC
-                believes, that every blooming entrepreneural idea will blossom
-                into a success story. We have an unrivalled capacity to incubate
-                innovations and foster real world solutions. We aim to carry
-                this forward and contribute substantially to the entrepreneurial
-                growth in North Bengal.
-              </Typography>
-            </RowCard>
-          </StyledBox>
-          <StyledBox data-aos="fade-in">
-            <Typography
-              variant="h3"
-              sx={{ fontSize: "4vw", fontWeight: "bold" }}
-              align="right"
-              color={colors.primary}
-              gutterBottom
-            >
-              Why is EDC important?
-            </Typography>
-            <RowRevCard>
-              <Img src="/assets/placeholders/sticky_notes.jpg" />
-              <Typography
-                variant="p"
-                component="p"
-                color={colors.secondary}
-                sx={{ margin: "auto 0", fontWeight: "bold", fontSize: "20px" }}
-              >
-                Creativity, professionalism, risk-taking, passion, social skills
-                are some of the characteristics that define an entrepreneur. EDC
-                JGEC is about this and much more. We not only provide a platform
-                but create a perfect environment to hone and sharpen the
-                entrepreneurial genes in every aspiring heart. We aim to create
-                history of developing entrepreneurial minds of the highest
-                caliber.
-              </Typography>
-            </RowRevCard>
-          </StyledBox>
-          <StyledBox data-aos="fade-in">
-            <Typography
-              variant="h3"
-              sx={{ fontSize: "4vw", fontWeight: "bold" }}
-              align="left"
-              color={colors.primary}
-              gutterBottom
-            >
-              How It All Started
-            </Typography>
-            <RowCard>
-              <Img src="/assets/placeholders/sticky_notes.jpg" />
-              <Typography
-                variant="p"
-                component="p"
-                color={colors.secondary}
-                sx={{ margin: "auto 0", fontWeight: "bold", fontSize: "20px" }}
-              >
-                It all started way back in 2019 when the idea of JOB CREATORS
-                instead of JOB SEEKERS sinked into our minds . We explored, grew
-                up from a small community of 10 members to a large community of
-                300+ members. We have a dedicated core team working behind us
-                everyday aiding in the flourishing of the community as well also
-                helps us to focus to our objective. In a word we say &ldquo;No
-                what ifs . Let&lsquo;s make it happen.&rdquo;
-              </Typography>
-            </RowCard>
-          </StyledBox>
-        </StyledPaper>
-      </Box>
-      <Box
-        style={{
-          minHeight: "50vh",
-          width: "100vw",
-          padding: "40px",
-        }}
-      >
-        <Typography
+    <Layout>
+      <>
+        <Box
           sx={{
-            fontSize: "3vw",
-            fontWeight: "bold",
-            textShadow: "2px 2px maroon",
-            width: "fit-content",
-            borderRadius: "10px",
-            padding: "10px",
-            ":first-letter": {
-              color: colors.warning,
-              fontSize: "4vw",
-            },
+            minHeight: { xs: "calc(100vh - 86px)", md: "calc(100vh - 76px)" },
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
           }}
         >
-          EVENTS
-          <Link href="/events">
-            <IconButton
-            size="large"
+          <div className="animate__animated animate__fadeIn">
+            <Typography
               sx={{
-                ml: "20px",
-                mt: "-10px",
-                borderRadius: "10px",
-                ":hover": {
-                  transform: "scale(1.1)",
-                  transition: "all 1s",
-                },
+                fontSize: "6vw",
+                textShadow: "6px 2px maroon",
+                color: colors.white,
               }}
+              variant={"h2"}
+              fontFamily={"Cloister black"}
             >
-              <KeyboardDoubleArrowRight fontSize="large"/>
-            </IconButton>
-          </Link>
-        </Typography>
-        <EventWrapper>
-          <EventCard>
-            <div className="flip-card-inner">
-              <div className="flip-card-front">
-                <EventImage
-                  src="/assets/placeholders/tedx_ayan.jpg"
-                  alt="tedx"
-                />
-              </div>
-              <div className="flip-card-back">
+              Entreprenuership & Development Cell
+            </Typography>
+          </div>
+          <div className="animate__animated animate__fadeIn">
+            <Typography
+              sx={{
+                fontSize: "4vw",
+                textShadow: "2px 2px maroon",
+                color: "#ffffffdd",
+              }}
+              variant={"h2"}
+              fontFamily={"Cloister black"}
+            >
+              Jalpaiguri Government Engineering College
+            </Typography>
+          </div>
+        </Box>
+        <Box
+          style={{
+            minHeight: "100vh",
+            width: "100vw",
+            backgroundColor: "white",
+            backgroundImage: `url("/assets/backgrounds/corporate.jpg")`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundAttachment: "fixed",
+          }}
+        >
+          <StyledPaper>
+            <StyledBox data-aos="fade-in">
+              <Typography
+                variant="h3"
+                sx={{ fontSize: "4vw", fontWeight: "bold" }}
+                gutterBottom
+                color={colors.primary}
+              >
+                What is EDC ?
+              </Typography>
+              <RowCard>
+                <Img src="/assets/placeholders/compass.jpg" />
                 <Typography
-                  component="p"
                   variant="p"
+                  component={"p"}
+                  color={colors.secondary}
+                  align="justify"
                   sx={{
+                    margin: "auto 0",
+                    fontWeight: "bold",
                     fontSize: "20px",
-                    padding: "20px",
                   }}
                 >
-                  On 11th February 2019, Entrepreneurship Development Cell, JGEC
-                  organized its first ever TEDx in the college campus.
+                  Right from infusing the spirit of entrepreneurship, to
+                  providing an excellent mentorship throughout the journey, EDC
+                  JGEC believes, that every blooming entrepreneural idea will
+                  blossom into a success story. We have an unrivalled capacity
+                  to incubate innovations and foster real world solutions. We
+                  aim to carry this forward and contribute substantially to the
+                  entrepreneurial growth in North Bengal.
                 </Typography>
-              </div>
-            </div>
-          </EventCard>
-          <EventCard>
-            <div className="flip-card-inner">
-              <div className="flip-card-front">
-                <EventImage src="/assets/placeholders/bquiz.jpg" alt="tedx" />
-              </div>
-              <div className="flip-card-back">
+              </RowCard>
+            </StyledBox>
+            <StyledBox data-aos="fade-in">
+              <Typography
+                variant="h3"
+                sx={{ fontSize: "4vw", fontWeight: "bold" }}
+                align="right"
+                color={colors.primary}
+                gutterBottom
+              >
+                Why is EDC important?
+              </Typography>
+              <RowRevCard>
+                <Img src="/assets/placeholders/sticky_notes.jpg" />
                 <Typography
-                  component="p"
                   variant="p"
+                  component="p"
+                  color={colors.secondary}
                   sx={{
+                    margin: "auto 0",
+                    fontWeight: "bold",
                     fontSize: "20px",
-                    padding: "20px",
                   }}
                 >
-                  The Biz Quiz, is an event to test the business knowledge of
-                  participants.
+                  Creativity, professionalism, risk-taking, passion, social
+                  skills are some of the characteristics that define an
+                  entrepreneur. EDC JGEC is about this and much more. We not
+                  only provide a platform but create a perfect environment to
+                  hone and sharpen the entrepreneurial genes in every aspiring
+                  heart. We aim to create history of developing entrepreneurial
+                  minds of the highest caliber.
                 </Typography>
-              </div>
-            </div>
-          </EventCard>
-          <EventCard>
-            <div className="flip-card-inner">
-              <div className="flip-card-front">
-                <EventImage src="/assets/placeholders/bplan.jpg" alt="tedx" />
-              </div>
-              <div className="flip-card-back">
+              </RowRevCard>
+            </StyledBox>
+            <StyledBox data-aos="fade-in">
+              <Typography
+                variant="h3"
+                sx={{ fontSize: "4vw", fontWeight: "bold" }}
+                align="left"
+                color={colors.primary}
+                gutterBottom
+              >
+                How It All Started
+              </Typography>
+              <RowCard>
+                <Img src="/assets/placeholders/sticky_notes.jpg" />
                 <Typography
-                  component="p"
                   variant="p"
+                  component="p"
+                  color={colors.secondary}
                   sx={{
+                    margin: "auto 0",
+                    fontWeight: "bold",
                     fontSize: "20px",
-                    padding: "20px",
                   }}
                 >
-                  The Business Plan Competition is an event to test the
-                  entrepreneurial skills of participants, where they can build
-                  and voice for their products in a real-life scenario.
+                  It all started way back in 2019 when the idea of JOB CREATORS
+                  instead of JOB SEEKERS sinked into our minds . We explored,
+                  grew up from a small community of 10 members to a large
+                  community of 300+ members. We have a dedicated core team
+                  working behind us everyday aiding in the flourishing of the
+                  community as well also helps us to focus to our objective. In
+                  a word we say &ldquo;No what ifs . Let&apos;s make it
+                  happen.&rdquo;
                 </Typography>
+              </RowCard>
+            </StyledBox>
+          </StyledPaper>
+        </Box>
+        <Box
+          style={{
+            minHeight: "50vh",
+            width: "100vw",
+            padding: "40px",
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: "3vw",
+              fontWeight: "bold",
+              textShadow: "2px 2px maroon",
+              width: "fit-content",
+              borderRadius: "10px",
+              padding: "10px",
+              ":first-letter": {
+                color: colors.warning,
+                fontSize: "4vw",
+              },
+            }}
+          >
+            EVENTS
+            <Link href="/events">
+              <IconButton
+                size="large"
+                sx={{
+                  ml: "20px",
+                  mt: "-10px",
+                  borderRadius: "10px",
+                  ":hover": {
+                    transform: "scale(1.1)",
+                    transition: "all 1s",
+                  },
+                }}
+              >
+                <KeyboardDoubleArrowRight fontSize="large" />
+              </IconButton>
+            </Link>
+          </Typography>
+          <EventWrapper>
+            <EventCard>
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <EventImage
+                    src="/assets/placeholders/tedx_ayan.jpg"
+                    alt="tedx"
+                  />
+                </div>
+                <div className="flip-card-back">
+                  <Typography
+                    component="p"
+                    variant="p"
+                    sx={{
+                      fontSize: "20px",
+                      padding: "20px",
+                    }}
+                  >
+                    On 11th February 2019, Entrepreneurship Development Cell,
+                    JGEC organized its first ever TEDx in the college campus.
+                  </Typography>
+                </div>
               </div>
-            </div>
-          </EventCard>
-        </EventWrapper>
-      </Box>
-    </>
+            </EventCard>
+            <EventCard>
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <EventImage src="/assets/placeholders/bquiz.jpg" alt="tedx" />
+                </div>
+                <div className="flip-card-back">
+                  <Typography
+                    component="p"
+                    variant="p"
+                    sx={{
+                      fontSize: "20px",
+                      padding: "20px",
+                    }}
+                  >
+                    The Biz Quiz, is an event to test the business knowledge of
+                    participants.
+                  </Typography>
+                </div>
+              </div>
+            </EventCard>
+            <EventCard>
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <EventImage src="/assets/placeholders/bplan.jpg" alt="tedx" />
+                </div>
+                <div className="flip-card-back">
+                  <Typography
+                    component="p"
+                    variant="p"
+                    sx={{
+                      fontSize: "20px",
+                      padding: "20px",
+                    }}
+                  >
+                    The Business Plan Competition is an event to test the
+                    entrepreneurial skills of participants, where they can build
+                    and voice for their products in a real-life scenario.
+                  </Typography>
+                </div>
+              </div>
+            </EventCard>
+          </EventWrapper>
+        </Box>
+      </>
+    </Layout>
   );
 }
 const RowCard = styled.div`

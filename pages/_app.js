@@ -7,6 +7,7 @@ import { Box } from "@mui/material";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
+import { AnimatePresence } from "framer-motion";
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -25,7 +26,13 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
     <SessionProvider session={session} refetchInterval={5 * 60}>
       <Appbar />
       <Box sx={{ mt: { xs: "86px", md: "76px" } }} />
-      <Component {...pageProps} />
+      <AnimatePresence
+        exitBeforeEnter
+        initial={false}
+        onExitComplete={() => window.scrollTo(0, 0)}
+      >
+        <Component {...pageProps} />
+      </AnimatePresence>
       <Footer />
     </SessionProvider>
   );

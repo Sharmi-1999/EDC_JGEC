@@ -4,6 +4,8 @@ import { styled } from "@mui/material/styles";
 import { outlinedInputClasses } from "@mui/material/OutlinedInput";
 import { inputLabelClasses } from "@mui/material/InputLabel";
 import "animate.css";
+import { useEffect } from "react";
+import Layout from "../components/Layout";
 
 const StyledTextField = styled(TextField)({
   [`& .${outlinedInputClasses.root} .${outlinedInputClasses.notchedOutline}`]: {
@@ -39,6 +41,9 @@ const StyledTextField = styled(TextField)({
 });
 
 export default function Events() {
+  useEffect(() => {
+    document.title = "CONTACT | EDC";
+  }, []);
   return (
     <Box>
       <Typography
@@ -69,39 +74,41 @@ export default function Events() {
           flexDirection: "column",
         }}
       >
-        <FormControl
-          sx={{ m: 1, minWidth: "100%" }}
-          component={"form"}
-          variant={"outlined"}
-        >
-          <StyledTextField
-            sx={{ mb: "10px" }}
-            fullWidth
-            required
-            id="email"
-            label="Email"
-            variant="outlined"
-            name="email"
-          />
-          <StyledTextField
-            sx={{ mb: "10px" }}
-            fullWidth
-            required
-            id="password"
-            label="Password"
-            type="password"
-            name="password"
-            variant="outlined"
-          />
-          <Button
-            variant="contained"
-            color="inherit"
-            fullWidth
-            sx={{ color: "#9f0037" }}
+        <Layout>
+          <FormControl
+            sx={{ m: 1, minWidth: "100%" }}
+            component={"form"}
+            variant={"outlined"}
           >
-            Log In
-          </Button>
-        </FormControl>
+            <StyledTextField
+              sx={{ mb: "10px" }}
+              fullWidth
+              required
+              id="email"
+              label="Email"
+              variant="outlined"
+              name="email"
+            />
+            <StyledTextField
+              sx={{ mb: "10px" }}
+              fullWidth
+              required
+              id="password"
+              label="Password"
+              type="password"
+              name="password"
+              variant="outlined"
+            />
+            <Button
+              variant="contained"
+              color="inherit"
+              fullWidth
+              sx={{ color: "#9f0037" }}
+            >
+              Log In
+            </Button>
+          </FormControl>
+        </Layout>
       </Box>
     </Box>
   );

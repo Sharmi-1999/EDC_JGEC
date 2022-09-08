@@ -4,43 +4,42 @@ import "pro-gallery/dist/statics/main.css";
 import { colors } from "../styles/colors";
 import styled from "styled-components";
 import "animate.css";
-import React from "react";
+import Layout from "../components/Layout";
+import React, { useEffect } from "react";
 import items from "../data/gallery.json";
 export default function Gallery() {
   const [modalOpen, setModalOpen] = React.useState(false);
   const [modalImage, setModalImage] = React.useState("");
   const options = {
-
-    "layoutParams": {
-      "structure": {
-        "galleryLayout": 0
+    layoutParams: {
+      structure: {
+        galleryLayout: 0,
       },
-      "groups": {
-        "groupSize": 1
+      groups: {
+        groupSize: 1,
+      },
+      info: {
+        placement: "",
+      },
     },
-      "info": {
-        "placement": ""
-      }
-    },
-    "behaviourParams": {
-      "item": {
-        "content": {
-          "hoverAnimation": "ZOOM_IN",
-          "placementAnimation": "SLIDE"
+    behaviourParams: {
+      item: {
+        content: {
+          hoverAnimation: "ZOOM_IN",
+          placementAnimation: "SLIDE",
         },
-        "clickAction": "ACTION",
-        "overlay": {
-          "hoveringBehaviour": "NEVER_VISIBLE"
-        }
+        clickAction: "ACTION",
+        overlay: {
+          hoveringBehaviour: "NEVER_VISIBLE",
+        },
       },
-      "gallery": {
-        "scrollAnimation": "SLIDE_UP"
-      }
+      gallery: {
+        scrollAnimation: "SLIDE_UP",
+      },
     },
-    "stylingParams": {
-      "itemBorderRadius": 7
-    }
-
+    stylingParams: {
+      itemBorderRadius: 7,
+    },
   };
   const container = {
     width: window.innerWidth - 100,
@@ -56,6 +55,9 @@ export default function Gallery() {
 
   // The scrollingElement is usually the window, if you are scrolling inside another element, suplly it here
   const scrollingElement = window;
+  useEffect(() => {
+    document.title = "CONTACT | EDC";
+  }, []);
   return (
     <Box>
       <Typography
@@ -90,26 +92,32 @@ export default function Gallery() {
           flexDirection: "column",
         }}
       >
-        <Box
-          sx={{
-            margin: "auto",
-            padding: "40px",
-          }}
-        >
-          <ProGallery
-            items={items}
-            options={options}
-            container={container}
-            eventsListener={eventsListener}
-            scrollingElement={scrollingElement}
-          />
-        </Box>
+        <Layout>
+          <Box
+            sx={{
+              margin: "auto",
+              padding: "40px",
+            }}
+          >
+            <ProGallery
+              items={items}
+              options={options}
+              container={container}
+              eventsListener={eventsListener}
+              scrollingElement={scrollingElement}
+            />
+          </Box>
+        </Layout>
       </Box>
-      <Modal open={modalOpen} onClose={() => setModalOpen(false)} sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
+      <Modal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <Box>
           <img
             src={modalImage}
