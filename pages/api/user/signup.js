@@ -15,17 +15,19 @@ export default async function handler(req, res) {
         if (!exist) {
           const user = new User({
             name: name,
-            password: password,
             email: email,
+            password: password,
           });
           user
             .save()
             .then((user) => {
+              console.log(user)
               res
                 .status(201)
                 .json({ message: "User created", success: true, user });
             })
             .catch((err) => {
+              console.log(err)
               res
                 .status(500)
                 .json({

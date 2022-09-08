@@ -1,6 +1,8 @@
 import { Typography, Box } from "@mui/material";
 import { colors } from "../styles/colors";
 import styled from "styled-components";
+import Layout from "../components/Layout";
+import { useEffect } from "react";
 import "animate.css";
 import { CheckCircle, AdjustRounded } from "@mui/icons-material";
 const objectives = [
@@ -36,6 +38,9 @@ const initiatives = [
   },
 ];
 export default function About() {
+  useEffect(() => {
+    document.title = "ABOUT | EDC";
+  }, []);
   return (
     <Box>
       <Typography
@@ -70,97 +75,103 @@ export default function About() {
           flexDirection: "column",
         }}
       >
-        <Row>
-          <GlassCard>
-            <Typography variant="h4" component={"h4"}>
-              Our Mission
-            </Typography>
-            <Typography variant="body1" component={"p"}>
-              To help current and aspiring entrepreneurs improve their potential
-              and advance society by sharing knowledge and developing an
-              entrepreneurial and innovative mindset.
-            </Typography>
-          </GlassCard>
-          <GlassCard>
-            <Typography variant="h4" component={"h4"}>
-              Our Vision
-            </Typography>
+        <Layout>
+          <Row>
+            <GlassCard>
+              <Typography variant="h4" component={"h4"}>
+                Our Mission
+              </Typography>
+              <Typography variant="body1" component={"p"}>
+                To help current and aspiring entrepreneurs improve their
+                potential and advance society by sharing knowledge and
+                developing an entrepreneurial and innovative mindset.
+              </Typography>
+            </GlassCard>
+            <GlassCard>
+              <Typography variant="h4" component={"h4"}>
+                Our Vision
+              </Typography>
 
-            <Typography variant="body1" component={"p"}>
-              The vision of EDC JGEC is, “To be a well recognized centre of
-              excellence for entrepreneurship development based on quality
-              learning and skill development.” In view of the vision, the
-              mission statement is, “To foster entrepreneurial thinking,
-              promote, facilitate the business knowledge and develop the
-              aspiring successful entrepreneurs imbibed with leadership
-              qualities using innovative and ethical business practices to make
-              global impact”. We also aim at developing interpersonality skills
-              of our beloved student community.
-            </Typography>
-          </GlassCard>
-        </Row>
-        <Row>
-          <GlassRowCard>
-            <Typography gutterBottom variant="h4" component={"h4"}>
-              Objectives
-            </Typography>
-            {objectives.map((objective, index) => {
-              return (
-                <StepCard key={index}>
-                  <AdjustRounded
-                    fontSize="large"
-                    sx={{
-                      position: "relative",
-                      top: "25%",
-                      backgroundColor: colors.warning,
-                      borderRadius: "50%",
-                      left: "-20px",
-                    }}
-                  />
-                  <Typography variant="h6" component={"h6"} color={colors.grey}>
-                    {objective}
-                  </Typography>
-                </StepCard>
-              );
-            })}
-          </GlassRowCard>
-        </Row>
-        <Row>
-          <GlassRowCard>
-            <Typography gutterBottom variant="h4" component={"h4"}>
-              Initiatives
-            </Typography>
-            {initiatives.map((val, index) => {
-              return (
-                <StepCard2 key={index}>
-                  <Typography
-                    variant="h6"
-                    align="right"
-                    component={"h6"}
-                    color={colors.warning}
-                  >
-                    {val.title}
-                    <br />
-                    <Typography variant="body1" align="right" component={"p"}>
-                      {val.desc}
+              <Typography variant="body1" component={"p"}>
+                The vision of EDC JGEC is, &ldquo;To be a well recognized centre
+                of excellence for entrepreneurship development based on quality
+                learning and skill development.&rdquo; In view of the vision,
+                the mission statement is, &ldquo;To foster entrepreneurial
+                thinking, promote, facilitate the business knowledge and develop
+                the aspiring successful entrepreneurs imbibed with leadership
+                qualities using innovative and ethical business practices to
+                make global impact&rdquo;. We also aim at developing
+                interpersonality skills of our beloved student community.
+              </Typography>
+            </GlassCard>
+          </Row>
+          <Row>
+            <GlassRowCard>
+              <Typography gutterBottom variant="h4" component={"h4"}>
+                Objectives
+              </Typography>
+              {objectives.map((objective, index) => {
+                return (
+                  <StepCard key={index}>
+                    <AdjustRounded
+                      fontSize="large"
+                      sx={{
+                        position: "relative",
+                        top: "25%",
+                        backgroundColor: colors.warning,
+                        borderRadius: "50%",
+                        left: "-20px",
+                      }}
+                    />
+                    <Typography
+                      variant="h6"
+                      component={"h6"}
+                      color={colors.grey}
+                    >
+                      {objective}
                     </Typography>
-                  </Typography>
+                  </StepCard>
+                );
+              })}
+            </GlassRowCard>
+          </Row>
+          <Row>
+            <GlassRowCard>
+              <Typography gutterBottom variant="h4" component={"h4"}>
+                Initiatives
+              </Typography>
+              {initiatives.map((val, index) => {
+                return (
+                  <StepCard2 key={index}>
+                    <Typography
+                      variant="h6"
+                      align="right"
+                      component={"h6"}
+                      color={colors.warning}
+                    >
+                      {val.title}
+                      <br />
+                      <Typography variant="body1" align="right" component={"p"}>
+                        {val.desc}
+                      </Typography>
+                    </Typography>
 
-                  <CheckCircle
-                    fontSize="large"
-                    sx={{
-                      position: "relative",
-                      top: "25%",
-                      backgroundColor: colors.warning,
-                      borderRadius: "50%",
-                      right: "-20px",
-                    }}
-                  />
-                </StepCard2>
-              );
-            })}
-          </GlassRowCard>
-        </Row>
+                    <CheckCircle
+                      fontSize="large"
+                      sx={{
+                        position: "relative",
+                        top: "25%",
+                        backgroundColor: colors.warning,
+                        borderRadius: "50%",
+                        right: "-20px",
+                      }}
+                    />
+                  </StepCard2>
+                );
+              })}
+            </GlassRowCard>
+          </Row>
+        </Layout>
       </Box>
     </Box>
   );
@@ -184,11 +195,11 @@ const GlassCard = styled.div`
   min-height: 400px;
   margin: 20px;
   padding: 20px;
-  backdrop-filter: blur(4px) saturate(200%);
-  -webkit-backdrop-filter: blur(4px) saturate(200%);
-  background-color: rgba(0, 0, 0, 0.51);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(10, 10, 10, 0.2);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: center;
