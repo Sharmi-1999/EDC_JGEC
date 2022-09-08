@@ -186,11 +186,11 @@ const GlassCard = styled.div`
   min-height: 400px;
   margin: 20px;
   padding: 20px;
-  backdrop-filter: blur(4px) saturate(200%);
-  -webkit-backdrop-filter: blur(4px) saturate(200%);
-  background-color: rgba(0, 0, 0, 0.51);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(10, 10, 10, 0.2);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: center;

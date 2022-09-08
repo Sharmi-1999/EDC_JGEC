@@ -121,11 +121,11 @@ const Card = styled.div`
   box-shadow: rgb(1, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 0, 0, 0.5) -3px -3px 6px 1px inset;
   /*glassmorphism*/
-  backdrop-filter: blur(6px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(17, 25, 40, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(17, 25, 40, 0.2);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
   h4 {
     color: ${colors.danger};
@@ -162,9 +162,10 @@ const CardImg = styled.div`
     padding: 20px;
     object-fit: cover;
     aspect-ratio: 1/1;
+    transition : all 0.5s ease-in-out;
     :hover {
       transform: scale(1.1);
-      transition: all 0.5s ease-in-out;
     }
+    
   }
 `;

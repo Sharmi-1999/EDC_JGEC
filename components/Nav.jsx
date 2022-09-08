@@ -48,11 +48,11 @@ const pages = [
     link: "/about",
     icon: <Info />,
   },
-  {
-    name: "Blogs",
-    link: "/blogs",
-    icon: <Article />,
-  },
+  // {
+  //   name: "Blogs",
+  //   link: "/blogs",
+  //   icon: <Article />,
+  // },
   {
     name: "Events",
     link: "/events",
@@ -73,16 +73,16 @@ const pages = [
     link: "/contact",
     icon: <ConnectWithoutContact />,
   },
-  {
-    name: "Sign Up",
-    link: "/signup",
-    icon: <PersonAddIcon />,
-  },
-  {
-    name: "Log In",
-    link: "/login",
-    icon: <LoginIcon />,
-  },
+  // {
+  //   name: "Sign Up",
+  //   link: "/signup",
+  //   icon: <PersonAddIcon />,
+  // },
+  // {
+  //   name: "Log In",
+  //   link: "/login",
+  //   icon: <LoginIcon />,
+  // },
 ];
 const settings = [
   {
@@ -301,9 +301,9 @@ const Appbar = (props) => {
                   </Menu>
                 </Box>
               )}
-              {!session && status === "unauthenticated" && (
+              {/* {!session && status === "unauthenticated" && (
                 <Box sx={{ flexGrow: 0 }}>
-                  {/* <Link href={"/signup"}>
+                  <Link href={"/signup"}>
                     <Button
                       sx={{ ml: "7px", display: { xs: "none", md: "inline" } }}
                       variant="outlined"
@@ -311,7 +311,7 @@ const Appbar = (props) => {
                     >
                       Sign Up
                     </Button>
-                  </Link> */}
+                  </Link>
                   <Link href={"/login"}>
                     <Button
                       sx={{
@@ -327,7 +327,7 @@ const Appbar = (props) => {
                     </Button>
                   </Link>
                 </Box>
-              )}
+              )} */}
             </Toolbar>
           </Container>
         </AppBar>

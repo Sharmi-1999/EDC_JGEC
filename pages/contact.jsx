@@ -1,7 +1,40 @@
-import { Typography, Box } from "@mui/material";
+import { Typography, Box,FormControl,TextField , Button} from "@mui/material";
 import { colors } from "../styles/colors";
-import styled from "styled-components";
+import { styled } from "@mui/material/styles";
+import { outlinedInputClasses } from "@mui/material/OutlinedInput";
+import { inputLabelClasses } from "@mui/material/InputLabel";
 import "animate.css";
+
+const StyledTextField = styled(TextField)({
+    [`& .${outlinedInputClasses.root} .${outlinedInputClasses.notchedOutline}`]: {
+        borderColor: "white"
+    },
+    [`&:hover .${outlinedInputClasses.root} .${outlinedInputClasses.notchedOutline}`]: {
+        borderColor: "white"
+    },
+    [`& .${outlinedInputClasses.root}.${outlinedInputClasses.focused} .${outlinedInputClasses.notchedOutline}`]: {
+        borderColor: "white"
+    },
+    [`& .${outlinedInputClasses.input}`]: {
+        color: "white"
+    },
+    [`&:hover .${outlinedInputClasses.input}`]: {
+        color: "white"
+    },
+    [`& .${outlinedInputClasses.root}.${outlinedInputClasses.focused} .${outlinedInputClasses.input}`]: {
+        color: "white"
+    },
+    [`& .${inputLabelClasses.outlined}`]: {
+        color: "white"
+    },
+    [`&:hover .${inputLabelClasses.outlined}`]: {
+        color: "white"
+    },
+    [`& .${inputLabelClasses.outlined}.${inputLabelClasses.focused}`]: {
+        color: "white"
+    }
+});
+
 export default function Events() {
   return (
     <Box>
@@ -20,19 +53,30 @@ export default function Events() {
         }}
         className="animate__animated animate__fadeInLeft"
       >
-        We would love to hear from you!
+        Contact Us
       </Typography>
       <Box
         sx={{
           width: "100%",
           minHeight: "100vh",
-          backgroundColor: "#fff",
+          backgroundColor: "#000",
           justifyContent: "center",
           alignItems: "center",
           display: "flex",
           flexDirection: "column",
         }}
-      ></Box>
+      >
+        <FormControl
+          sx={{ m: 1, minWidth: "100%" }}
+          component={"form"}
+          variant={"outlined"}
+        >
+          <StyledTextField sx={{ mb: "10px" }} fullWidth required id="email" label="Email" variant="outlined" name="email"  />
+          <StyledTextField sx={{ mb: "10px" }} fullWidth required id="password" label="Password" type="password" name="password" variant="outlined"  />
+          <Button variant="contained" color="inherit" fullWidth sx={{ color: "#9f0037" }}>Log In</Button>
+        </FormControl>
+
+      </Box>
     </Box>
   );
 }
