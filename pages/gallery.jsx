@@ -10,14 +10,37 @@ export default function Events() {
   const [modalOpen, setModalOpen] = React.useState(false);
   const [modalImage, setModalImage] = React.useState("");
   const options = {
-    layoutParams: {
-      structure: {
-        galleryLayout: 0,
+
+    "layoutParams": {
+      "structure": {
+        "galleryLayout": 0
       },
+      "groups": {
+        "groupSize": 1
     },
-    stylingParams: {
-      itemBorderRadius: 5,
+      "info": {
+        "placement": ""
+      }
     },
+    "behaviourParams": {
+      "item": {
+        "content": {
+          "hoverAnimation": "ZOOM_IN",
+          "placementAnimation": "SLIDE"
+        },
+        "clickAction": "ACTION",
+        "overlay": {
+          "hoveringBehaviour": "NEVER_VISIBLE"
+        }
+      },
+      "gallery": {
+        "scrollAnimation": "SLIDE_UP"
+      }
+    },
+    "stylingParams": {
+      "itemBorderRadius": 7
+    }
+
   };
   const container = {
     width: window.innerWidth - 100,

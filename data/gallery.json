@@ -36,7 +36,7 @@
     }
   },
   {
-    "mediaUrl": "https://picsum.photos/400/500",
+    "mediaUrl": "https://picsum.photos/500/500",
     "metaData": {
       "type": "image",
       "title": "Image 1",
@@ -45,7 +45,7 @@
     }
   },
   {
-    "mediaUrl": "https://picsum.photos/400/500",
+    "mediaUrl": "https://picsum.photos/700/500",
     "metaData": {
       "type": "image",
       "title": "Image 1",
@@ -54,7 +54,7 @@
     }
   },
   {
-    "mediaUrl": "https://picsum.photos/400/500",
+    "mediaUrl": "https://picsum.photos/400/100",
     "metaData": {
       "type": "image",
       "title": "Image 1",
