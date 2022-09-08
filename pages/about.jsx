@@ -35,7 +35,7 @@ const initiatives = [
     desc: "Guiding sessions are held to dig out the innovation from the students and giving them a platform to pitch their ideas in front of the investors",
   },
 ];
-export default function Events() {
+export default function About() {
   return (
     <Box>
       <Typography
@@ -112,7 +112,6 @@ export default function Events() {
                     sx={{
                       position: "relative",
                       top: "25%",
-                      color: colors.grey,
                       backgroundColor: colors.warning,
                       borderRadius: "50%",
                       left: "-20px",
@@ -152,7 +151,6 @@ export default function Events() {
                     sx={{
                       position: "relative",
                       top: "25%",
-                      color: colors.grey,
                       backgroundColor: colors.warning,
                       borderRadius: "50%",
                       right: "-20px",

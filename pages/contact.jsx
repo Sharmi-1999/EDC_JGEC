@@ -1,8 +1,10 @@
 import { Typography, Box } from "@mui/material";
+import "pro-gallery/dist/statics/main.css";
 import { colors } from "../styles/colors";
 import styled from "styled-components";
 import "animate.css";
-export default function Events() {
+import React from "react";
+export default function Contact() {
   return (
     <Box>
       <Typography
@@ -20,13 +22,17 @@ export default function Events() {
         }}
         className="animate__animated animate__fadeInLeft"
       >
-        Contact Us
+        Contact
       </Typography>
       <Box
         sx={{
           width: "100%",
-          minHeight: "100vh",
+          minHeight: "80vh",
           backgroundColor: "#fff",
+          backgroundImage: `url("/assets/backgrounds/blob-scatter-haikei.svg")`,
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
           justifyContent: "center",
           alignItems: "center",
           display: "flex",

@@ -174,19 +174,18 @@ export default function Home() {
           EVENTS
           <Link href="/events">
             <IconButton
+            size="large"
               sx={{
                 ml: "20px",
-                mt: "-5px",
+                mt: "-10px",
                 borderRadius: "10px",
-                backgroundColor: "white",
                 ":hover": {
-                  backgroundColor: "white",
                   transform: "scale(1.1)",
                   transition: "all 1s",
                 },
               }}
             >
-              <KeyboardDoubleArrowRight />
+              <KeyboardDoubleArrowRight fontSize="large"/>
             </IconButton>
           </Link>
         </Typography>

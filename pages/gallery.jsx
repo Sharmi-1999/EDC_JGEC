@@ -6,7 +6,7 @@ import styled from "styled-components";
 import "animate.css";
 import React from "react";
 import items from "../data/gallery.json";
-export default function Events() {
+export default function Gallery() {
   const [modalOpen, setModalOpen] = React.useState(false);
   const [modalImage, setModalImage] = React.useState("");
   const options = {

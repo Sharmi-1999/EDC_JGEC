@@ -2,7 +2,7 @@ import { Typography, Box } from "@mui/material";
 import { colors } from "../styles/colors";
 import styled from "styled-components";
 import "animate.css";
-export default function Events() {
+export default function Team() {
   return (
     <Box>
       <Typography
