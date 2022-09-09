@@ -1,0 +1,51 @@
+[
+    {
+        "POST1":[{
+        "imageUrl": "https://jgec.ac.in/edc/static/images/Purbayan%20Kar.jpg",
+        "memberName":"Purbayan Kar",
+        "githubLink":"https://github.com",
+        "emailLink":"https://mail.google.com/mail/u/0/",
+        "facebookLink":"https://facebook.com"
+        
+        },
+        {
+            "imageUrl": "https://jgec.ac.in/edc/static/images/Purbayan%20Kar.jpg",
+            "memberName":"Purbayan Kar",
+            "githubLink":"https://github.com",
+            "emailLink":"https://mail.google.com/mail/u/0/",
+            "facebookLink":"https://facebook.com"
+            
+        },
+        {
+            "imageUrl": "https://jgec.ac.in/edc/static/images/Purbayan%20Kar.jpg",
+            "memberName":"Purbayan Kar",
+            "githubLink":"https://github.com",
+            "emailLink":"https://mail.google.com/mail/u/0/",
+            "facebookLink":"https://facebook.com"
+            
+        }
+    ]
+    },
+    {
+        "POST2":[{
+           "imageUrl": "https://jgec.ac.in/edc/static/images/Purbayan%20Kar.jpg",
+            "memberName":"Purbayan Kar",
+            "githubLink":"https://github.com",
+            "emailLink":"https://mail.google.com/mail/u/0/",
+            "facebookLink":"https://facebook.com"
+           
+         }]
+    },
+    {
+        "POST3":[{
+           "imageUrl": "https://jgec.ac.in/edc/static/images/Purbayan%20Kar.jpg",
+            "memberName":"Purbayan Kar",
+            "githubLink":"https://github.com",
+            "emailLink":"https://mail.google.com/mail/u/0/",
+            "facebookLink":"https://facebook.com"
+
+           
+         }]
+    }
+  ]
+  
