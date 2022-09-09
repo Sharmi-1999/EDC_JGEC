@@ -23,6 +23,14 @@ export default function Events() {
             color: colors.warning,
             fontSize: "5vw",
           },
+          "&::after": {
+            content: '""',
+            display: "block",
+            width: "50%",
+            marginTop: -2,
+            marginBottom: 4,
+            borderBottom: `5px solid ${colors.warning}`,
+          },
         }}
         className="animate__animated animate__fadeInLeft"
       >

@@ -2,9 +2,10 @@ import { Typography, Box } from "@mui/material";
 import { colors } from "../styles/colors";
 import styled from "styled-components";
 import "animate.css";
-import members from '../data/team.json';
+import data from "../data/team.json";
 import CardSection from "../components/CardSection";
 export default function Team() {
+  console.log(data);
   return (
     <Box>
       <Typography
@@ -20,6 +21,14 @@ export default function Team() {
             color: colors.warning,
             fontSize: "5vw",
           },
+          "&::after": {
+            content: '""',
+            display: "block",
+            width: "50%",
+            marginTop: -2,
+            marginBottom: 4,
+            borderBottom: `5px solid ${colors.warning}`,
+          },
         }}
         className="animate__animated animate__fadeInLeft"
       >
@@ -33,37 +42,29 @@ export default function Team() {
           backgroundImage: `url("/assets/backgrounds/blob-scatter-haikei.svg")`,
           display: "flex",
           flexDirection: "column",
-          padding: '20px'
+          padding: "20px",
         }}
       >
-        <Typography
+        {/* <Typography
           sx={{
             fontSize: "2vw",
             fontWeight: "bold",
             textShadow: "2px 2px maroon",
             borderRadius: "10px",
             padding: "0 5%",
-            textAlign: 'left',
+            textAlign: "left",
             ":first-letter": {
               color: colors.warning,
               fontSize: "3.2vw",
             },
-            '&::after': {
-              content: '""',
-              display: 'block',
-              width: '13vw',
-              marginTop: -1,
-              borderBottom: '2px solid #f9dd94',
-            }
-
           }}
           className="animate__animated animate__fadeInLeft"
         >
           EDC Member 2k22
-        </Typography>
+        </Typography> */}
 
-        {members.map((Elem, index) => {
-          return (<CardSection Elem={Elem} key={index} />)
+        {data.map((Elem, index) => {
+          return <CardSection Elem={Elem} key={index} />;
         })}
       </Box>
     </Box>

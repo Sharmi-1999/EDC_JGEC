@@ -10,6 +10,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import { useState } from "react";
 
 const Card = (props) => {
+    console.log(props)
     const [ outerCard,setOuterCard] = useState(false);
     const cardHover = ()=>{
         setOuterCard(true);
@@ -50,9 +51,9 @@ const Card = (props) => {
                     }}
 
                 >
-                    <Link href={props.githubLink}><GitHubIcon fontSize="large" sx={{ cursor: 'pointer', fill: '#f7c600', filter: 'drop-shadow(3px 4px 2px rgb(0 0 0 / 0.4))','&:hover':{transform:'scale(1.2)',fill:'#fff'}}} /></Link>
-                    <Link href={props.emailLink}><EmailIcon fontSize="large" sx={{ cursor: 'pointer', fill: '#f7c600', filter: 'drop-shadow(3px 4px 2px rgb(0 0 0 / 0.4))','&:hover':{transform:'scale(1.2)',fill:'#fff'} }} /></Link>
-                    <Link href={props.facebookLink}><FacebookIcon fontSize="large" sx={{ cursor: 'pointer', fill: '#f7c600', filter: 'drop-shadow(3px 4px 2px rgb(0 0 0 / 0.4))','&:hover':{transform:'scale(1.2)',fill:'#fff'} }} /></Link>
+                    <Link href={props.githubLink || ""}><GitHubIcon fontSize="large" sx={{ cursor: 'pointer', fill: '#f7c600', filter: 'drop-shadow(3px 4px 2px rgb(0 0 0 / 0.4))','&:hover':{transform:'scale(1.2)',fill:'#fff'}}} /></Link>
+                    <Link href={props.emailLink || ""}><EmailIcon fontSize="large" sx={{ cursor: 'pointer', fill: '#f7c600', filter: 'drop-shadow(3px 4px 2px rgb(0 0 0 / 0.4))','&:hover':{transform:'scale(1.2)',fill:'#fff'} }} /></Link>
+                    <Link href={props.facebookLink || ""}><FacebookIcon fontSize="large" sx={{ cursor: 'pointer', fill: '#f7c600', filter: 'drop-shadow(3px 4px 2px rgb(0 0 0 / 0.4))','&:hover':{transform:'scale(1.2)',fill:'#fff'} }} /></Link>
                 </Box>
                 <Box
                     sx={{

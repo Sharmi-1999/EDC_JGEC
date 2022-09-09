@@ -1,6 +1,6 @@
 [
   {
-    "directors": [
+    "Directors": [
       {
         "name": "Shaikh Hamza H. R",
         "img": "/assets/team/hamzaHR.jpeg",
@@ -20,7 +20,7 @@
     ]
   },
   {
-    "finance": [
+    "Finance Heads": [
       {
         "name": "Soumavo Dey",
         "img": "/assets/team/soumaverick.jpeg",
@@ -40,7 +40,7 @@
     ]
   },
   {
-    "log_ops": [
+    "Logistics & Operations Heads": [
       {
         "name": "Harsh Jha",
         "img": "/assets/team/harsh.jpeg",
@@ -60,7 +60,7 @@
     ]
   },
   {
-    "event": [
+    "Event Heads": [
       {
         "name": "Anubhab Sarkar",
         "img": "/assets/team/anubhab.png",
@@ -80,7 +80,7 @@
     ]
   },
   {
-    "content": [
+    "Content Heads": [
       {
         "name": "V Nikhita",
         "img": "/assets/team/nikhita.jpeg",
@@ -100,7 +100,7 @@
     ]
   },
   {
-    "design": [
+    "Graphics & Design Heads": [
       {
         "name": "Sibaram Mahato",
         "img": "/assets/team/sibaram.jpeg",
@@ -120,7 +120,7 @@
     ]
   },
   {
-    "web": [
+    "Web Heads": [
       {
         "name": "Soham Chowdhury",
         "img": "/assets/team/soham.jpeg",
@@ -140,7 +140,7 @@
     ]
   },
   {
-    "social": [
+    "Social Media Heads": [
       {
         "name": "Hia Biswas",
         "img": "/assets/team/hia.jpeg",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "pr": [
+    "Public Relations Heads": [
       {
         "name": "Taki Hasan",
         "img": "/assets/team/taki.jpeg",
@@ -180,7 +180,7 @@
     ]
   },
   {
-    "ext_aff": [
+    "External Affairs Heads": [
       {
         "name": "Arpan Laha",
         "img": "/assets/team/arpan.jpeg",
