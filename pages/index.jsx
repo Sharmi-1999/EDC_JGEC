@@ -70,7 +70,7 @@ export default function Home() {
             <StyledBox data-aos="fade-in">
               <Typography
                 variant="h3"
-                sx={{ fontSize: "4vw", fontWeight: "bold" }}
+                sx={{ fontSize: { xs: "30px", md: "3vw", fontWeight: "bold" } }}
                 gutterBottom
                 color={colors.primary}
               >
@@ -102,7 +102,7 @@ export default function Home() {
             <StyledBox data-aos="fade-in">
               <Typography
                 variant="h3"
-                sx={{ fontSize: "4vw", fontWeight: "bold" }}
+                sx={{ fontSize: { xs: "30px", md: "3vw", fontWeight: "bold" } }}
                 align="right"
                 color={colors.primary}
                 gutterBottom
@@ -134,7 +134,7 @@ export default function Home() {
             <StyledBox data-aos="fade-in">
               <Typography
                 variant="h3"
-                sx={{ fontSize: "4vw", fontWeight: "bold" }}
+                sx={{ fontSize: { xs: "30px", md: "3vw", fontWeight: "bold" } }}
                 align="left"
                 color={colors.primary}
                 gutterBottom
@@ -175,7 +175,7 @@ export default function Home() {
         >
           <Typography
             sx={{
-              fontSize: "3vw",
+              fontSize: { xs: "30px", md: "3vw", fontWeight: "bold" },
               fontWeight: "bold",
               textShadow: "2px 2px maroon",
               width: "fit-content",
@@ -183,7 +183,7 @@ export default function Home() {
               padding: "10px",
               ":first-letter": {
                 color: colors.warning,
-                fontSize: "4vw",
+                fontSize: { xs: "40px", md: "4vw", fontWeight: "bold" },
               },
             }}
           >
@@ -290,6 +290,7 @@ const RowCard = styled.div`
     }
     p{
       text-align: center;
+      line-height: 1.1;
     }
 `;
 const RowRevCard = styled(RowCard)`
@@ -323,7 +324,9 @@ const EventWrapper = styled.div`
   @media (max-width: 600px) {
     flex-direction: column;
     align-items: center;
-  `;
+    justify-content: center;
+  }
+`;
 const EventCard = styled.div`
   width: 360px;
   height: 400px;
@@ -367,6 +370,9 @@ const EventCard = styled.div`
     transform: scale(1.1);
     transition: all 0.5s;
     overflow: hidden;
+  }
+  @media (max-width : 475px){
+    zoom : 0.7;
   }
 `;
 const EventImage = styled.img`

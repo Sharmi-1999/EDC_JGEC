@@ -14,11 +14,11 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
     AOS.init({
       duration: 1000,
       easing: "ease-out-cubic",
-      once: false,
+      once: true,
       offset: 50,
     });
 
-    setTimeout(() => setLoading(false), 3000);
+    setTimeout(() => setLoading(false), 2000);
   }, []);
   return loading ? (
     <Loader />

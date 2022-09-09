@@ -12,7 +12,7 @@ export default function Events() {
     <Box>
       <Typography
         sx={{
-          fontSize: "4vw",
+          fontSize: { xs: "30px", md: "3vw", fontWeight: "bold" },
           fontWeight: "bold",
           textShadow: "2px 2px maroon",
           width: "fit-content",
@@ -21,15 +21,15 @@ export default function Events() {
           padding: "0 5%",
           ":first-letter": {
             color: colors.warning,
-            fontSize: "5vw",
+            fontSize: "4vw",
           },
           "&::after": {
             content: '""',
             display: "block",
             width: "50%",
-            marginTop: -2,
+            marginTop: -1,
             marginBottom: 4,
-            borderBottom: `5px solid ${colors.warning}`,
+            borderTop: `5px solid ${colors.warning}`,
           },
         }}
         className="animate__animated animate__fadeInLeft"

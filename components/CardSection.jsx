@@ -3,6 +3,7 @@ import { colors } from "../styles/colors";
 import styled from "styled-components";
 import "animate.css";
 import Card from "./Card";
+import HeroCard from "./HeroCard";
 
 const CardSection = (props) => {
   console.log(props.Elem);
@@ -21,23 +22,25 @@ const CardSection = (props) => {
       >
         <Typography
           sx={{
-            fontSize: "2vw",
+            fontSize: { xs: "30px", md: "3vw", fontWeight: "bold" },
             fontWeight: "bold",
-            textShadow: `2px 2px ${colors.primary}`,
             width: "fit-content",
+            color: colors.white,
             borderRadius: "10px",
-            padding: "10px 0",
+            padding: "0 5%",
+            ":first-letter": {
+              color: colors.info,
+              fontSize: "4vw",
+            },
             "&::after": {
               content: '""',
-              height: "4px",
-              width: "60%",
-              backgroundColor: `${colors.warning}`,
-              position: "absolute",
-              bottom: ".5em",
-              left: "0",
+              display: "block",
+              width: "50%",
+              marginTop: -1,
+              marginBottom: 4,
+              borderTop: `5px solid ${colors.info}`,
             },
           }}
-          className="animate__animated animate__fadeInLeft"
         >
           {Object.keys(props.Elem)[0]}
         </Typography>
@@ -48,8 +51,8 @@ const CardSection = (props) => {
             justifyContent: "space-evenly",
             alignItems: "center",
             display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
+            flexDirection: { xs: "column", md: "row" },
+            // flexWrap: "wrap",
           }}
         >
           {Object.keys(props.Elem).map((elem) => {
@@ -57,16 +60,25 @@ const CardSection = (props) => {
               <>
                 {props.Elem[elem].map((member, ind) => {
                   return (
-                    <>
-                      <Card
-                        imageUrl={member.img}
-                        memberName={member.name}
-                        githubLink={member.githubLink}
-                        emailLink={member.mail}
-                        facebookLink={member.fb}
-                        key={ind}
-                      />
-                    </>
+                    // <Card
+                    //   imageUrl={member.img}
+                    //   memberName={member.name}
+                    //   githubLink={member.githubLink}
+                    //   emailLink={member.mail}
+                    //   facebookLink={member.fb}
+                    //   key={ind}
+                    //   index={ind}
+                    // />
+                    <HeroCard
+                      img={member.img}
+                      name={member.name}
+                      mail={member.mail}
+                      fb={member.fb}
+                      lkdin={member.linkedin}
+                      ig={member.ig}
+                      key={ind}
+                      index={ind}
+                    />
                   );
                 })}
               </>
