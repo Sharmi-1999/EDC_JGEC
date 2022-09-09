@@ -1,0 +1,182 @@
+{
+  "directors": [
+    {
+      "name": "Shaikh Hamza H. R",
+      "img": "/assets/team/hamzaHR.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/that_jolite/",
+      "mail": ""
+    },
+    {
+      "name": "Shinjan Das",
+      "img": "/assets/team/shinjan.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/_.its_shinz._/",
+      "mail": ""
+    }
+  ],
+  "finance": [
+    {
+      "name": "Soumavo Dey",
+      "img": "/assets/team/soumaverick.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/_.maverick360._/",
+      "mail": ""
+    },
+    {
+      "name": "Shreya Paul",
+      "img": "/assets/team/shreya.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/__shreya_paul__/",
+      "mail": ""
+    }
+  ],
+  "log_ops": [
+    {
+      "name": "Harsh Jha",
+      "img": "/assets/team/harsh.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/harshjha100/",
+      "mail": ""
+    },
+    {
+      "name": "Gaurav Mitra",
+      "img": "/assets/team/gaurav.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/meh._.mitra/",
+      "mail": ""
+    }
+  ],
+  "event": [
+    {
+      "name": "Anubhab Sarkar",
+      "img": "/assets/team/anubhab.png",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/thewittygrandpa/",
+      "mail": ""
+    },
+    {
+      "name": "Protiti Saha",
+      "img": "/assets/team/protiti.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/protiti_saha_02/",
+      "mail": ""
+    }
+  ],
+  "content": [
+    {
+      "name": "V Nikhita",
+      "img": "/assets/team/nikhita.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/its.nikhita/",
+      "mail": ""
+    },
+    {
+      "name": "Aditi Pal",
+      "img": "/assets/team/aditi_pal.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/aditi_pal_2003/",
+      "mail": ""
+    }
+  ],
+  "design": [
+    {
+      "name": "Sibaram Mahato",
+      "img": "/assets/team/sibaram.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/__s_i_b_u__/",
+      "mail": ""
+    },
+    {
+      "name": "Souvik Banerjee",
+      "img": "/assets/team/souvik.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "",
+      "mail": ""
+    }
+  ],
+  "web": [
+    {
+      "name": "Soham Chowdhury",
+      "img": "/assets/team/soham.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/soham_hasnt_/",
+      "mail": ""
+    },
+    {
+      "name": "Suman Mandal",
+      "img": "/assets/team/suman_mandal.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/_suman.aes/",
+      "mail": ""
+    }
+  ],
+  "social": [
+    {
+      "name": "Hia Biswas",
+      "img": "/assets/team/hia.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/_heymeh_hia/",
+      "mail": ""
+    },
+    {
+      "name": "Adrita Mandal",
+      "img": "/assets/team/adrita.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/adrita1047/",
+      "mail": ""
+    }
+  ],
+  "pr": [
+    {
+      "name": "Taki Hasan",
+      "img": "/assets/team/taki.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/taki.hasan.1650/",
+      "mail": ""
+    },
+    {
+      "name": "Aditi Kumari",
+      "img": "/assets/team/aditi.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/aditi__674/",
+      "mail": ""
+    }
+  ],
+  "ext_aff": [
+    {
+      "name": "Arpan Laha",
+      "img": "/assets/team/arpan.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "https://www.instagram.com/_arpanlaha_/",
+      "mail": ""
+    },
+    {
+      "name": "Diya Maiti",
+      "img": "/assets/team/diya.jpeg",
+      "linkedin": "",
+      "fb": "",
+      "ig": "",
+      "mail": ""
+    }
+  ]
+}

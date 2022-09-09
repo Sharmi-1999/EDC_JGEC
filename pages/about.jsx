@@ -51,6 +51,7 @@ export default function About() {
           width: "fit-content",
           borderRadius: "10px",
           padding: "0 5%",
+          color: colors.white,
           ":first-letter": {
             color: colors.warning,
             fontSize: "5vw",

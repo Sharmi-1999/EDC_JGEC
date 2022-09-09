@@ -194,6 +194,7 @@ export default function Home() {
                 sx={{
                   ml: "20px",
                   mt: "-10px",
+                  color: colors.white,
                   borderRadius: "10px",
                   ":hover": {
                     transform: "scale(1.1)",

@@ -11,6 +11,7 @@ export default function Team() {
           fontWeight: "bold",
           textShadow: "2px 2px maroon",
           width: "fit-content",
+          color: colors.white,
           borderRadius: "10px",
           padding: "0 5%",
           ":first-letter": {

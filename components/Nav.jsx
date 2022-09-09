@@ -88,17 +88,17 @@ const settings = [
   {
     name: "Profile",
     link: "/profile",
-    onc: () => { },
+    onc: () => {},
   },
   {
     name: "Dashboard",
     link: "/dashboard",
-    onc: () => { },
+    onc: () => {},
   },
   {
     name: "Account",
     link: "/account",
-    onc: () => { },
+    onc: () => {},
   },
   {
     name: "Logout",
@@ -145,9 +145,9 @@ const Appbar = (props) => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-  if(status === "loading") return <></>
+  if (status === "loading") return <></>;
   return (
-    <React.Fragment >
+    <React.Fragment>
       <CssBaseline />
       <ElevationScroll {...props}>
         <AppBar
@@ -182,20 +182,44 @@ const Appbar = (props) => {
                   <MenuIcon sx={{ color: "#fff" }} />
                 </IconButton>
                 <Drawer open={drawerOpen} onClose={handleCloseDrawerMenu}>
-                  <List>
+                  <List sx={{ width: "250px" }}>
                     {pages.map((page) => (
                       <Link href={page.link} key={page.name}>
                         <ListItem
                           disablePadding
                           onClick={handleCloseDrawerMenu}
+                          sx={{
+                            backgroundColor:
+                              router.pathname === page.link
+                                ? colors.secondary
+                                : null,
+                            ":hover": {
+                              backgroundColor:
+                                router.pathname === page.link
+                                  ? `${colors.danger}`
+                                  : `${colors.grey}`,
+                            },
+                          }}
                         >
                           <ListItemButton>
-                            <ListItemIcon sx={{ color: "#800000" }}>
+                            <ListItemIcon
+                              sx={{
+                                color:
+                                  router.pathname === page.link
+                                    ? colors.grey
+                                    : colors.primary,
+                              }}
+                            >
                               {page.icon}
                             </ListItemIcon>
                             <ListItemText
                               primary={page.name}
-                              sx={{ color: "#800000" }}
+                              sx={{
+                                color:
+                                  router.pathname === page.link
+                                    ? colors.grey
+                                    : colors.primary,
+                              }}
                             />
                           </ListItemButton>
                         </ListItem>

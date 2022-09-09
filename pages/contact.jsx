@@ -53,6 +53,7 @@ export default function Events() {
           textShadow: "2px 2px maroon",
           width: "fit-content",
           borderRadius: "10px",
+          color: colors.white,
           padding: "0 5%",
           ":first-letter": {
             color: colors.warning,
