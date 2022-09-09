@@ -19,7 +19,7 @@ export default function Team() {
           padding: "0 5%",
           ":first-letter": {
             color: colors.warning,
-            fontSize: "4vw",
+            fontSize: { xs: "40px", md: "4vw", fontWeight: "bold" },
           },
           "&::after": {
             content: '""',

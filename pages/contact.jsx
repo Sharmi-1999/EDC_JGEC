@@ -65,7 +65,7 @@ export default function Events() {
           padding: "0 5%",
           ":first-letter": {
             color: colors.warning,
-            fontSize: "4vw",
+            fontSize: { xs: "40px", md: "4vw", fontWeight: "bold" },
           },
           "&::after": {
             content: '""',
@@ -101,7 +101,7 @@ export default function Events() {
           >
             <Box
               sx={{
-                width: "40%",
+                width: {xs:"100%",md:"40%"},
                 // height:"100%",
                 p: 5,
                 display: "flex",
@@ -202,7 +202,7 @@ export default function Events() {
             </Box>
             <Box
               sx={{
-                width: "40%",
+                width: {xs:"100%",md:"40%"},
                 p: 5,
                 backdropFilter: "blur(10px) ",
                 WebkitBackdropFilter: "blur(10px) ",

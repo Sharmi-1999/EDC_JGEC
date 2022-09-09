@@ -9,6 +9,12 @@ const Card = styled.div`
     visibility: visible;
     transition: all 0.5s ease-in-out;
   }
+  margin-bottom: 40px;
+  h6 {
+    :first-letter{
+      color: ${colors.warning};
+    }
+  }
 `;
 const Actions = styled.div`
   position: absolute;
@@ -26,7 +32,7 @@ const Actions = styled.div`
   }
   .ico:hover {
     color: ${colors.info};
-    transform : scale(1.3);
+    transform: scale(1.3);
   }
 `;
 const Img = styled.img`
@@ -46,7 +52,6 @@ export default function HeroCard(props) {
       <Box
         sx={{
           width: "250px",
-          marginBottom: '40px',
           padding: 0,
           height: "250px",
           backdropFilter: `blur(10px)`,

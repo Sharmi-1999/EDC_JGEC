@@ -30,7 +30,7 @@ const CardSection = (props) => {
             padding: "0 5%",
             ":first-letter": {
               color: colors.info,
-              fontSize: "4vw",
+              fontSize: { xs: "40px", md: "4vw", fontWeight: "bold" },
             },
             "&::after": {
               content: '""',

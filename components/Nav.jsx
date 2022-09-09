@@ -181,7 +181,7 @@ const Appbar = (props) => {
                 >
                   <MenuIcon sx={{ color: "#fff" }} />
                 </IconButton>
-                <Drawer open={drawerOpen} onClose={handleCloseDrawerMenu}>
+                <Drawer open={drawerOpen} onClose={handleCloseDrawerMenu} PaperProps={{sx:{backdropFilter: "blur(15px)",WebkitBackdropFilter: "blur(10px) ", backgroundColor: "rgba(0,0,0,0.2)"}}}>
                   <List sx={{ width: "250px" }}>
                     {pages.map((page) => (
                       <Link href={page.link} key={page.name}>
@@ -191,7 +191,7 @@ const Appbar = (props) => {
                           sx={{
                             backgroundColor:
                               router.pathname === page.link
-                                ? colors.secondary
+                                ? colors.white
                                 : null,
                             ":hover": {
                               backgroundColor:
@@ -206,19 +206,25 @@ const Appbar = (props) => {
                               sx={{
                                 color:
                                   router.pathname === page.link
-                                    ? colors.grey
-                                    : colors.primary,
+                                    ? colors.primary
+                                    : colors.white,
                               }}
                             >
                               {page.icon}
                             </ListItemIcon>
                             <ListItemText
                               primary={page.name}
+                              primaryTypographyProps={{
+                                fontWeight:
+                                  router.pathname === page.link
+                                    ? "bold"
+                                    : "normal",
+                              }}
                               sx={{
                                 color:
                                   router.pathname === page.link
-                                    ? colors.grey
-                                    : colors.primary,
+                                    ? colors.primary
+                                    : colors.white,
                               }}
                             />
                           </ListItemButton>
