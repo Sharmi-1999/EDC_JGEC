@@ -35,6 +35,7 @@ export default function Home() {
                 color: colors.white,
               }}
               variant={"h2"}
+              className="cloister"
             >
               Entreprenuership Development Cell
             </Typography>
@@ -47,6 +48,7 @@ export default function Home() {
                 color: "#ffffffdd",
               }}
               variant={"h2"}
+              className="cloister"
             >
               Jalpaiguri Government Engineering College
             </Typography>

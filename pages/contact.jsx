@@ -14,7 +14,7 @@ import "animate.css";
 import { useEffect } from "react";
 import Layout from "../components/Layout";
 import Link from "next/link";
-
+import { useForm, ValidationError } from "@formspree/react";
 const StyledTextField = styled(TextField)({
   [`& .${outlinedInputClasses.root} .${outlinedInputClasses.notchedOutline}`]: {
     borderColor: "white",
@@ -49,6 +49,7 @@ const StyledTextField = styled(TextField)({
 });
 
 export default function Events() {
+  const [state, handleSubmit] = useForm("xzbwdzwy");
   useEffect(() => {
     document.title = "CONTACT | EDC";
   }, []);
@@ -101,7 +102,7 @@ export default function Events() {
           >
             <Box
               sx={{
-                width: {xs:"100%",md:"40%"},
+                width: { xs: "100%", md: "40%" },
                 // height:"100%",
                 p: 5,
                 display: "flex",
@@ -123,7 +124,10 @@ export default function Events() {
                   <LocationOn /> Address
                 </Typography>
                 <Typography variant="p" sx={{ marginLeft: "20px" }}>
-                  Jalpaiguri Government Engineering College,<br/> P.O. Denguajhar,<br/> Dist. - Jalpaiguri, 735102,<br/> West Bengal, India
+                  Jalpaiguri Government Engineering College,
+                  <br /> P.O. Denguajhar,
+                  <br /> Dist. - Jalpaiguri, 735102,
+                  <br /> West Bengal, India
                 </Typography>
               </div>
               <div>
@@ -154,7 +158,10 @@ export default function Events() {
                     color: "#E1306C",
                   }}
                 >
-                  <Link href={"https://www.instagram.com/edc_jgec/"} target="_blank">
+                  <Link
+                    href={"https://www.instagram.com/edc_jgec/"}
+                    target="_blank"
+                  >
                     <a>
                       <Instagram style={{ fill: "#E1306C" }} /> Connect with us
                       on Instagram
@@ -201,7 +208,7 @@ export default function Events() {
             </Box>
             <Box
               sx={{
-                width: {xs:"100%",md:"40%"},
+                width: { xs: "100%", md: "40%" },
                 p: 5,
                 backdropFilter: "blur(10px) ",
                 WebkitBackdropFilter: "blur(10px) ",
@@ -210,57 +217,84 @@ export default function Events() {
                 border: "1px solid rgba(255,255,255,0.2)",
               }}
             >
-              <FormControl
-                sx={{ m: 1, minWidth: "100%" }}
-                component={"form"}
-                variant={"outlined"}
-              >
-                <StyledTextField
-                  sx={{ mb: "10px" }}
-                  fullWidth
-                  required
-                  label="Name"
-                  variant="outlined"
-                  name="name"
-                />
-                <StyledTextField
-                  sx={{ mb: "10px" }}
-                  fullWidth
-                  required
-                  label="Email"
-                  type="email"
-                  name="email"
-                  variant="outlined"
-                />
-                <StyledTextField
-                  sx={{ mb: "10px" }}
-                  fullWidth
-                  required
-                  label="Mobile No"
-                  type="tel"
-                  name="phno"
-                  variant="outlined"
-                />
-                <StyledTextField
-                  sx={{ mb: "10px" }}
-                  fullWidth
-                  required
-                  label="Message"
-                  type="text"
-                  name="message"
-                  multiline
-                  rows={4}
-                  variant="outlined"
-                />
-                <Button
-                  variant="contained"
-                  color="inherit"
-                  fullWidth
-                  sx={{ color: "#9f0037" }}
-                >
-                  Submit
-                </Button>
-              </FormControl>
+              {state.succeeded ? (
+                <>
+                  <Typography variant="body1">
+                    Thanks for reaching out! Someone will soon get back to you!
+                  </Typography>
+                </>
+              ) : (
+                <>
+                  <FormControl
+                    sx={{ m: 1, minWidth: "100%" }}
+                    component={"form"}
+                    variant={"outlined"}
+                    onSubmit={handleSubmit}
+                  >
+                    <StyledTextField
+                      sx={{ mb: "10px" }}
+                      fullWidth
+                      required
+                      label="Name"
+                      id="name"
+                      variant="outlined"
+                      name="name"
+                    />
+                    <StyledTextField
+                      sx={{ mb: "10px" }}
+                      fullWidth
+                      required
+                      label="Email"
+                      id="email"
+                      type="email"
+                      name="email"
+                      variant="outlined"
+                    />
+                    <ValidationError
+                      prefix="Email"
+                      field="email"
+                      errors={state.errors}
+                    />
+                    <StyledTextField
+                      sx={{ mb: "10px" }}
+                      fullWidth
+                      required
+                      label="Mobile No"
+                      type="tel"
+                      id="phno"
+                      name="phno"
+                      variant="outlined"
+                    />
+                    <StyledTextField
+                      sx={{ mb: "10px" }}
+                      fullWidth
+                      required
+                      label="Message"
+                      type="text"
+                      name="message"
+                      id="message"
+                      multiline
+                      rows={4}
+                      variant="outlined"
+                    />
+                    <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+          />
+                    <Button
+                      variant="contained"
+                      color="inherit"
+                      type="submit"
+                      disabled={state.submitting}
+                      fullWidth
+                      sx={{ color: "#9f0037" }}
+                    >
+                      Submit
+                    </Button>
+                  </FormControl>
+                </>
+              )}
             </Box>
           </Box>
         </Layout>

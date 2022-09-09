@@ -1,8 +1,6 @@
 import { Typography, Box } from "@mui/material";
 import { colors } from "../styles/colors";
-import styled from "styled-components";
 import "animate.css";
-import Card from "./Card";
 import HeroCard from "./HeroCard";
 
 const CardSection = (props) => {
@@ -26,10 +24,11 @@ const CardSection = (props) => {
             fontWeight: "bold",
             width: "fit-content",
             color: colors.white,
+            textShadow: `1px 1px ${colors.grey}`,
             borderRadius: "10px",
             padding: "0 5%",
             ":first-letter": {
-              color: colors.info,
+              // color: colors.danger,
               fontSize: { xs: "40px", md: "4vw", fontWeight: "bold" },
             },
             "&::after": {
@@ -38,7 +37,7 @@ const CardSection = (props) => {
               width: "50%",
               marginTop: -1,
               marginBottom: 4,
-              borderTop: `5px solid ${colors.info}`,
+              borderTop: `5px solid ${colors.danger}`,
             },
           }}
         >

@@ -11,9 +11,9 @@ const Card = styled.div`
   }
   margin-bottom: 40px;
   h6 {
-    :first-letter{
-      color: ${colors.warning};
-    }
+    // :first-letter{
+    //   color: ${colors.warning};
+    // }
   }
 `;
 const Actions = styled.div`
@@ -91,6 +91,7 @@ export default function HeroCard(props) {
         variant="h6"
         component="h6"
         align="center"
+        color={colors.warning}
       >
         {props.name}
       </Typography>
