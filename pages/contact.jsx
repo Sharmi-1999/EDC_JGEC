@@ -123,8 +123,7 @@ export default function Events() {
                   <LocationOn /> Address
                 </Typography>
                 <Typography variant="p" sx={{ marginLeft: "20px" }}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
-                  veniam?
+                  Jalpaiguri Government Engineering College,<br/> P.O. Denguajhar,<br/> Dist. - Jalpaiguri, 735102,<br/> West Bengal, India
                 </Typography>
               </div>
               <div>
@@ -137,7 +136,7 @@ export default function Events() {
                     color: "#4267B2",
                   }}
                 >
-                  <Link href={"https://facebook.com"}>
+                  <Link href={"https://www.facebook.com/jgecEDC"}>
                     <a>
                       <Facebook style={{ fill: "#4267B2" }} /> Connect with us
                       on Facebook
@@ -155,7 +154,7 @@ export default function Events() {
                     color: "#E1306C",
                   }}
                 >
-                  <Link href={"https://instagram.com"} target="_blank">
+                  <Link href={"https://www.instagram.com/edc_jgec/"} target="_blank">
                     <a>
                       <Instagram style={{ fill: "#E1306C" }} /> Connect with us
                       on Instagram
@@ -163,7 +162,7 @@ export default function Events() {
                   </Link>
                 </Typography>
               </div>
-              <div>
+              {/* <div>
                 <Typography
                   variant="h6"
                   sx={{
@@ -180,7 +179,7 @@ export default function Events() {
                     </a>
                   </Link>
                 </Typography>
-              </div>
+              </div> */}
               <div>
                 <Typography
                   variant="h6"
@@ -191,7 +190,7 @@ export default function Events() {
                     color: "#0A66C2",
                   }}
                 >
-                  <Link href={"https://linkedin.com"}>
+                  <Link href={"https://www.linkedin.com/company/edc-jgec/"}>
                     <a>
                       <LinkedIn style={{ fill: "#0A66C2" }} /> Connect with us
                       on LinkedIn

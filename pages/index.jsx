@@ -35,9 +35,8 @@ export default function Home() {
                 color: colors.white,
               }}
               variant={"h2"}
-              fontFamily={"Cloister black"}
             >
-              Entreprenuership & Development Cell
+              Entreprenuership Development Cell
             </Typography>
           </div>
           <div className="animate__animated animate__fadeIn">
@@ -48,7 +47,6 @@ export default function Home() {
                 color: "#ffffffdd",
               }}
               variant={"h2"}
-              fontFamily={"Cloister black"}
             >
               Jalpaiguri Government Engineering College
             </Typography>
@@ -371,8 +369,8 @@ const EventCard = styled.div`
     transition: all 0.5s;
     overflow: hidden;
   }
-  @media (max-width : 475px){
-    zoom : 0.7;
+  @media (max-width: 475px) {
+    zoom: 0.7;
   }
 `;
 const EventImage = styled.img`
