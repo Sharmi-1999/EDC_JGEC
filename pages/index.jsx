@@ -181,6 +181,7 @@ export default function Home() {
               width: "fit-content",
               borderRadius: "10px",
               padding: "10px",
+              color: colors.white,
               ":first-letter": {
                 color: colors.warning,
                 fontSize: { xs: "40px", md: "4vw", fontWeight: "bold" },

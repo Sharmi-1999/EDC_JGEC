@@ -119,11 +119,12 @@ export default function Events() {
                     display: "flex",
                     alignItems: "center",
                     fontWeight: "bold",
+                    color: colors.white,
                   }}
                 >
                   <LocationOn /> Address
                 </Typography>
-                <Typography variant="p" sx={{ marginLeft: "20px" }}>
+                <Typography variant="p" sx={{ marginLeft: "20px" }} color={colors.white}>
                   Jalpaiguri Government Engineering College,
                   <br /> P.O. Denguajhar,
                   <br /> Dist. - Jalpaiguri, 735102,
