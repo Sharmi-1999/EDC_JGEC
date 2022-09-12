@@ -3,9 +3,13 @@ import { colors } from "../styles/colors";
 import styled from "styled-components";
 import "animate.css";
 import data from "../data/team.json";
+import { useEffect } from "react";
 import CardSection from "../components/CardSection";
 export default function Team() {
   console.log(data);
+  useEffect(() => {
+    document.title = "TEAM | EDC";
+  }, []);
   return (
     <Box>
       <Typography

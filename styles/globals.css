@@ -37,10 +37,10 @@ a {
   width: 0.5em;
 }
 ::-webkit-scrollbar-track-piece {
-  background-color: #a4a4a4;
+  opacity: 0;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(94, 0, 0);
+  background-color: #2f2f2f;
 }
 
 .cloister {

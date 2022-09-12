@@ -1,63 +1,43 @@
-import { Typography, Box, Modal } from "@mui/material";
-import { ProGallery } from "pro-gallery";
-import "pro-gallery/dist/statics/main.css";
+import { Typography, Box } from "@mui/material";
+import { default as ReactGallery } from "react-photo-gallery";
+import Carousel, { Modal, ModalGateway } from "react-images";
 import { colors } from "../styles/colors";
-import styled from "styled-components";
 import "animate.css";
 import Layout from "../components/Layout";
-import React, { useEffect } from "react";
-import items from "../data/gallery.json";
+import React, { useState, useCallback, useEffect } from "react";
+import images from "../data/gallery.json";
+function randomDim() {
+  let dims = [
+    { width: 1, height: 1 },
+    { width: 4, height: 3 },
+    { width: 3, height: 2 },
+    { width: 3, height: 4 },
+    { width: 16, height: 9 },
+    { width: 5, height: 3 },
+  ];
+  return dims[Math.floor(Math.random() * dims.length)];
+}
 export default function Gallery() {
-  const [modalOpen, setModalOpen] = React.useState(false);
-  const [modalImage, setModalImage] = React.useState("");
-  const options = {
-    layoutParams: {
-      structure: {
-        galleryLayout: 0,
-      },
-      groups: {
-        groupSize: 1,
-      },
-      info: {
-        placement: "",
-      },
-    },
-    behaviourParams: {
-      item: {
-        content: {
-          hoverAnimation: "ZOOM_IN",
-          placementAnimation: "SLIDE",
-        },
-        clickAction: "ACTION",
-        overlay: {
-          hoveringBehaviour: "NEVER_VISIBLE",
-        },
-      },
-      gallery: {
-        scrollAnimation: "SLIDE_UP",
-      },
-    },
-    stylingParams: {
-      itemBorderRadius: 7,
-    },
-  };
-  const container = {
-    width: window.innerWidth - 100,
-    height: window.innerHeight - 100,
-  };
-  const eventsListener = (eventName, eventData) => {
-    // console.log({ eventName, eventData });
-    if (eventName === "ITEM_CLICKED") {
-      setModalImage(eventData.url);
-      setModalOpen(true);
-    }
-  };
-
-  // The scrollingElement is usually the window, if you are scrolling inside another element, suplly it here
-  const scrollingElement = window;
   useEffect(() => {
-    document.title = "CONTACT | EDC";
+    document.title = "GALLERY | EDC";
+    for (let i = 0; i < images.length; i++) {
+      let dim = randomDim();
+      images[i].width = dim.width;
+      images[i].height = dim.height;
+    }
   }, []);
+  const [currentImage, setCurrentImage] = useState(0);
+  const [viewerIsOpen, setViewerIsOpen] = useState(false);
+
+  const openLightbox = useCallback((event, { photo, index }) => {
+    setCurrentImage(index);
+    setViewerIsOpen(true);
+  }, []);
+
+  const closeLightbox = () => {
+    setCurrentImage(0);
+    setViewerIsOpen(false);
+  };
   return (
     <Box>
       <Typography
@@ -104,37 +84,28 @@ export default function Gallery() {
         <Layout>
           <Box
             sx={{
-              margin: "auto",
+              width: "100vw",
               padding: "40px",
             }}
           >
-            <ProGallery
-              items={items}
-              options={options}
-              container={container}
-              eventsListener={eventsListener}
-              scrollingElement={scrollingElement}
-            />
+            <ReactGallery photos={images} onClick={openLightbox} />
+            <ModalGateway>
+              {viewerIsOpen ? (
+                <Modal onClose={closeLightbox}>
+                  <Carousel
+                    currentIndex={currentImage}
+                    views={images.map((x) => ({
+                      ...x,
+                      srcset: x.srcSet,
+                      caption: x.title,
+                    }))}
+                  />
+                </Modal>
+              ) : null}
+            </ModalGateway>
           </Box>
         </Layout>
       </Box>
-      <Modal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Box>
-          <img
-            src={modalImage}
-            alt={"Focus Image"}
-            style={{ margin: "auto" }}
-          />
-        </Box>
-      </Modal>
     </Box>
   );
 }

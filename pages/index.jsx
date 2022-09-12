@@ -253,7 +253,7 @@ export default function Home() {
             <EventCard>
               <div className="flip-card-inner">
                 <div className="flip-card-front">
-                  <EventImage src="/assets/placeholders/bplan.jpg" alt="tedx" />
+                  <EventImage src="/assets/placeholders/sharktank.jpg" alt="tedx" />
                 </div>
                 <div className="flip-card-back">
                   <Typography
@@ -289,7 +289,7 @@ const RowCard = styled.div`
       width: 100%;
     }
     p{
-      text-align: center;
+      text-align: left;
       line-height: 1.1;
     }
 `;
@@ -300,9 +300,6 @@ const RowRevCard = styled(RowCard)`
     Img{
       margin: 20px 0;
       width: 100%;
-    }
-    p{
-      text-align: center;
     }
 `;
 const StyledPaper = styled(Paper)`

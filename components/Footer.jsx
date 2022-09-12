@@ -13,6 +13,7 @@ export default function Footer() {
           backgroundSize:'cover',
           backgroundPosition: 'fixed',
           display: "flex",
+          padding:'20px',
           justifyContent: "space-between",
           "@media (max-width: 900px)": {
             flexDirection: "column",
@@ -69,7 +70,7 @@ export default function Footer() {
         }}
       >
         <Typography sx={{ color: "#fff" }}>
-          Entrepreneurship & Development Cell, Jalpaiguri Government Engineering
+          Entrepreneurship Development Cell, Jalpaiguri Government Engineering
           College &nbsp;&#169;&nbsp;2022
         </Typography>
       </Box>
