@@ -5,6 +5,7 @@ import "animate.css";
 import data from "../data/team.json";
 import { useEffect } from "react";
 import CardSection from "../components/CardSection";
+import Layout from "../components/Layout";
 export default function Team() {
   console.log(data);
   useEffect(() => {
@@ -70,9 +71,11 @@ export default function Team() {
           EDC Member 2k22
         </Typography> */}
 
-        {data.map((Elem, index) => {
-          return <CardSection Elem={Elem} key={index} />;
-        })}
+        <Layout>
+          {data.map((Elem, index) => {
+            return <CardSection Elem={Elem} key={index} />;
+          })}
+        </Layout>
       </Box>
     </Box>
   );

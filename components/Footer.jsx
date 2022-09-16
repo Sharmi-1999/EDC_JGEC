@@ -9,11 +9,11 @@ export default function Footer() {
           minHeight: "300px",
           backgroundColor: colors.secondary,
           backgroundImage: `url("/assets/backgrounds/polygon-scatter-haikei.svg")`,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize:'cover',
-          backgroundPosition: 'fixed',
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "fixed",
           display: "flex",
-          padding:'20px',
+          padding: "20px",
           justifyContent: "space-between",
           "@media (max-width: 900px)": {
             flexDirection: "column",
@@ -31,14 +31,15 @@ export default function Footer() {
             alignItems: "center",
           }}
         >
-          <Typography
+          {/* <Typography
             variant="h5"
             gutterBottom
             component={"h5"}
             color={colors.lightGrey}
           >
             Activities.
-          </Typography>
+          </Typography> */}
+          <img src="/assets/placeholders/jgec.png" alt="logo" />
         </Box>
         <Box
           sx={{
@@ -67,6 +68,7 @@ export default function Footer() {
           display: "flex",
           justifyContent: "space-evenly",
           alignItems: "center",
+          padding: "10px",
         }}
       >
         <Typography sx={{ color: "#fff" }}>
