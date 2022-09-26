@@ -1,0 +1,202 @@
+[
+  {
+    "Directors": [
+      {
+        "name": "Shaikh Hamza H. R",
+        "img": "/assets/team/hamzaHR.jpeg",
+        "linkedin": "https://www.linkedin.com/in/hamza-shaikh-75a7871b4/",
+        "fb": "https://www.facebook.com/profile.php?id=100015768993339",
+        "ig": "https://www.instagram.com/that_jolite/",
+        "mail": ""
+      },
+      {
+        "name": "Shinjan Das",
+        "img": "/assets/team/shinjan.jpeg",
+        "linkedin": "https://www.linkedin.com/in/shinjan-das-66758b1b3/",
+        "fb": "https://www.facebook.com/shinjan.das.1",
+        "ig": "https://www.instagram.com/_.its_shinz._/",
+        "mail": ""
+      }
+    ]
+  },
+  {
+    "Finance Heads": [
+      {
+        "name": "Soumavo Dey",
+        "img": "/assets/team/soumaverick.jpeg",
+        "linkedin": "https://www.linkedin.com/in/soumavodey/",
+        "fb": "https://www.facebook.com/soum.mavo",
+        "ig": "https://www.instagram.com/_.maverick360._/",
+        "mail": ""
+      },
+      {
+        "name": "Shreya Paul",
+        "img": "/assets/team/shreya.jpeg",
+        "linkedin": "https://www.linkedin.com/in/shreya-paul-05a0a61aa/",
+        "fb": "https://www.facebook.com/shreya.paul.5492216",
+        "ig": "https://www.instagram.com/__shreya_paul__/",
+        "mail": ""
+      }
+    ]
+  },
+  {
+    "Logistics & Operations Heads": [
+      {
+        "name": "Harsh Jha",
+        "img": "/assets/team/harsh.jpeg",
+        "linkedin": "https://www.linkedin.com/in/harsh-jha-22ab561b6/",
+        "fb": "https://www.facebook.com/harsh.jha.161446",
+        "ig": "https://www.instagram.com/harshjha100/",
+        "mail": ""
+      },
+      {
+        "name": "Gaurav Mitra",
+        "img": "/assets/team/gaurav.jpeg",
+        "linkedin": "https://www.linkedin.com/in/gaurav-mitra/",
+        "fb": "https://www.facebook.com/arnav.bose.712",
+        "ig": "https://www.instagram.com/meh._.mitra/",
+        "mail": ""
+      }
+    ]
+  },
+  {
+    "Event Heads": [
+      {
+        "name": "Anubhab Sarkar",
+        "img": "/assets/team/anubhab.png",
+        "linkedin": "https://www.linkedin.com/in/anubhabsarkar/",
+        "fb": "",
+        "ig": "https://www.instagram.com/thewittygrandpa/",
+        "mail": ""
+      },
+      {
+        "name": "Protiti Saha",
+        "img": "/assets/team/protiti.jpg",
+        "linkedin": "https://www.linkedin.com/in/protiti-saha-b91028203/",
+        "fb": "",
+        "ig": "https://www.instagram.com/protiti_saha_02/",
+        "mail": ""
+      }
+    ]
+  },
+  {
+    "Content Heads": [
+      {
+        "name": "V Nikhita",
+        "img": "/assets/team/nikhita.jpeg",
+        "linkedin": "https://www.linkedin.com/in/nikhita28/",
+        "fb": "https://www.facebook.com/profile.php?id=100058608823618",
+        "ig": "https://www.instagram.com/its.nikhita/",
+        "mail": ""
+      },
+      {
+        "name": "Aditi Pal",
+        "img": "/assets/team/aditi_pal.jpg",
+        "linkedin": "https://www.linkedin.com/in/aditi-pal-552501224/",
+        "fb": "",
+        "ig": "https://www.instagram.com/aditi_pal_2003/",
+        "mail": ""
+      }
+    ]
+  },
+  {
+    "Graphics & Design Heads": [
+      {
+        "name": "Sibaram Mahato",
+        "img": "/assets/team/sibaram.jpg",
+        "linkedin": "https://www.linkedin.com/in/sibaram/",
+        "fb": "",
+        "ig": "https://www.instagram.com/__s_i_b_u__/",
+        "mail": ""
+      },
+      {
+        "name": "Souvik Banerjee",
+        "img": "/assets/team/souvik.jpeg",
+        "linkedin": "https://www.linkedin.com/in/souvik-banerjee-703b24211/",
+        "fb": "https://www.facebook.com/souvik.banerjee.1044186",
+        "ig": "",
+        "mail": ""
+      }
+    ]
+  },
+  {
+    "Web Heads": [
+      {
+        "name": "Soham Chowdhury",
+        "img": "/assets/team/soham.jpeg",
+        "linkedin": "https://www.linkedin.com/in/code-soham/",
+        "fb": "https://www.facebook.com/soham.36.chowdhury",
+        "ig": "https://www.instagram.com/soham_hasnt_/",
+        "mail": ""
+      },
+      {
+        "name": "Suman Mandal",
+        "img": "/assets/team/suman_mandal.jpeg",
+        "linkedin": "https://www.linkedin.com/in/sumanmandal-03/",
+        "fb": "https://www.facebook.com/profile.php?id=100044273148241",
+        "ig": "https://www.instagram.com/_suman.aes/",
+        "mail": ""
+      }
+    ]
+  },
+  {
+    "Social Media Heads": [
+      {
+        "name": "Hia Biswas",
+        "img": "/assets/team/hia.jpeg",
+        "linkedin": "https://www.linkedin.com/in/hia-biswas-016647200/",
+        "fb": "https://www.facebook.com/tridha.biswas",
+        "ig": "https://www.instagram.com/_heymeh_hia/",
+        "mail": ""
+      },
+      {
+        "name": "Adrita Mandal",
+        "img": "/assets/team/adrita.jpg",
+        "linkedin": "https://www.linkedin.com/in/adrita-mandal-3477ab226/",
+        "fb": "https://www.facebook.com/profile.php?id=100076167983448",
+        "ig": "https://www.instagram.com/adrita1047/",
+        "mail": ""
+      }
+    ]
+  },
+  {
+    "Public Relations Heads": [
+      {
+        "name": "Taki Hasan",
+        "img": "/assets/team/taki.jpg",
+        "linkedin": "https://www.linkedin.com/in/taki-hasan/",
+        "fb": "https://www.facebook.com/taki.hasan.1650",
+        "ig": "https://www.instagram.com/taki.hasan.1650/",
+        "mail": ""
+      },
+      {
+        "name": "Aditi Kumari",
+        "img": "/assets/team/aditi.jpeg",
+        "linkedin": "https://www.linkedin.com/in/aditi-kumari-45b957227/",
+        "fb": "",
+        "ig": "https://www.instagram.com/aditi__674/",
+        "mail": ""
+      }
+    ]
+  },
+  {
+    "External Affairs Heads": [
+      {
+        "name": "Arpan Laha",
+        "img": "/assets/team/arpan.jpeg",
+        "linkedin": "https://www.linkedin.com/in/arpan-laha-367b54220/",
+        "fb": "https://www.facebook.com/profile.php?id=100073692188528",
+        "ig": "https://www.instagram.com/_arpanlaha_/",
+        "mail": ""
+      },
+      {
+        "name": "Diya Maiti",
+        "img": "/assets/team/diya.jpeg",
+        "linkedin": "https://www.linkedin.com/in/diya-maiti-298590207/",
+        "fb": "",
+        "ig": "",
+        "mail": ""
+      }
+    ]
+  }
+]
